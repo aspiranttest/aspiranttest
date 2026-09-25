@@ -1,0 +1,4814 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+
+<meta charset="UTF-8">
+<meta name="google-site-verification" content="KLv_rmNwp0FCnmHN8p9SDjvtnK_HAz1PypJjjvQuR9Y">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AspirantTest.in - SSC, Banking, Railway & Competitive Exam Mock Tests</title>
+
+<meta name="description"
+content="AspirantTest.in पर SSC CGL, CHSL, GD, MTS, Banking, Railway, Police, Defence और अन्य competitive exams के online mock tests और practice questions करें।">
+
+<meta name="keywords"
+content="AspirantTest, mock test, SSC mock test, SSC CGL mock test, SSC CHSL mock test, SSC GD mock test, SSC MTS mock test, Banking mock test, Railway mock test, RRB NTPC mock test, Police mock test, competitive exam test, online test">
+
+<meta name="author" content="AspirantTest.in">
+
+<meta name="robots" content="index, follow">
+
+<link rel="canonical" href="https://aspiranttest.netlify.app/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="AspirantTest.in - Competitive Exam Mock Tests">
+<meta property="og:description"
+content="SSC, Banking, Railway, Police, Defence और अन्य competitive exams के online mock tests।">
+<meta property="og:url" content="https://aspiranttest.in/">
+<meta property="og:site_name" content="AspirantTest.in">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="AspirantTest.in - Competitive Exam Mock Tests">
+<meta name="twitter:description"
+content="Competitive exams के online mock tests और practice questions।">
+
+
+<script type="application/ld+json">
+
+{
+ "@context":"https://schema.org",
+ "@type":"WebSite",
+ "name":"AspirantTest.in",
+ "url":"https://aspiranttest.in/",
+ "description":"Online competitive exam mock tests and practice questions."
+}
+
+</script>
+
+
+<style>
+
+/* =====================================================
+   RESET
+===================================================== */
+
+*{
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    margin:0;
+
+    font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+    color:#172033;
+
+    /*
+      IMPORTANT:
+      BACKGROUND.png को index.html के
+      इसी folder में रखना है।
+    */
+
+    background-image:
+    linear-gradient(
+        rgba(255,255,255,0.78),
+        rgba(255,255,255,0.78)
+    ),
+    url("BACKGROUND.png");
+
+    background-size:cover;
+
+    background-position:center;
+
+    background-attachment:fixed;
+
+    background-repeat:no-repeat;
+
+    min-height:100vh;
+
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+header{
+
+    background:rgba(17,24,39,0.96);
+
+    color:#fff;
+
+    padding:15px 5%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:15px;
+
+    flex-wrap:wrap;
+
+    box-shadow:
+    0 4px 20px rgba(0,0,0,.20);
+
+    position:sticky;
+
+    top:0;
+
+    z-index:100;
+
+}
+
+.logo{
+
+    font-size:22px;
+
+    font-weight:800;
+
+    white-space:nowrap;
+
+}
+
+nav{
+
+    display:flex;
+
+    gap:7px;
+
+    flex-wrap:wrap;
+
+}
+
+
+/* =====================================================
+   BUTTONS
+===================================================== */
+
+button{
+
+    border:0;
+
+    border-radius:7px;
+
+    padding:11px 16px;
+
+    background:#2563eb;
+
+    color:#fff;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.2s;
+
+}
+
+button:hover{
+
+    opacity:.9;
+
+    transform:translateY(-1px);
+
+}
+
+button.red{
+    background:#dc2626;
+}
+
+button.green{
+    background:#16a34a;
+}
+
+button.gray{
+    background:#64748b;
+}
+
+button.orange{
+    background:#d97706;
+}
+
+button.purple{
+    background:#7c3aed;
+}
+
+button.dark{
+    background:#111827;
+}
+
+button:disabled{
+
+    background:#94a3b8;
+
+    cursor:not-allowed;
+
+    transform:none;
+
+}
+
+
+/* =====================================================
+   CONTAINER
+===================================================== */
+
+.container{
+
+    width:94%;
+
+    max-width:1250px;
+
+    margin:25px auto;
+
+}
+
+.hidden{
+    display:none !important;
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero{
+
+    background:
+    linear-gradient(
+        135deg,
+        rgba(29,78,216,.94),
+        rgba(124,58,237,.92)
+    );
+
+    color:#fff;
+
+    border-radius:18px;
+
+    padding:55px 25px;
+
+    text-align:center;
+
+    margin-bottom:25px;
+
+    box-shadow:
+    0 10px 30px rgba(30,64,175,.25);
+
+}
+
+.hero h1{
+
+    font-size:42px;
+
+    margin:0 0 12px;
+
+}
+
+.hero p{
+
+    font-size:18px;
+
+    line-height:1.6;
+
+}
+
+
+/* =====================================================
+   CARD
+===================================================== */
+
+.card{
+
+    background:rgba(255,255,255,.95);
+
+    backdrop-filter:blur(6px);
+
+    border-radius:14px;
+
+    padding:22px;
+
+    box-shadow:
+    0 5px 22px rgba(15,23,42,.12);
+
+    margin-bottom:20px;
+
+    border:
+    1px solid rgba(226,232,240,.85);
+
+}
+
+
+/* =====================================================
+   GRID
+===================================================== */
+
+.grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(
+        auto-fit,
+        minmax(260px,1fr)
+    );
+
+    gap:18px;
+
+}
+
+
+/* =====================================================
+   EXAM CARD
+===================================================== */
+
+.exam-card{
+
+    background:rgba(255,255,255,.97);
+
+    border-radius:14px;
+
+    padding:22px;
+
+    box-shadow:
+    0 5px 20px rgba(15,23,42,.10);
+
+    border-top:
+    5px solid #2563eb;
+
+    transition:.2s;
+
+}
+
+.exam-card:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:
+    0 10px 25px rgba(15,23,42,.15);
+
+}
+
+.exam-card h3{
+
+    margin:10px 0;
+
+}
+
+
+/* =====================================================
+   BADGES
+===================================================== */
+
+.badge{
+
+    display:inline-block;
+
+    padding:5px 10px;
+
+    border-radius:20px;
+
+    background:#dbeafe;
+
+    color:#1d4ed8;
+
+    font-size:12px;
+
+    font-weight:bold;
+
+}
+
+.badge.free{
+
+    background:#dcfce7;
+
+    color:#15803d;
+
+}
+
+
+/* =====================================================
+   INFO
+===================================================== */
+
+.info{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:7px;
+
+    margin:15px 0;
+
+    color:#475569;
+
+}
+
+
+/* =====================================================
+   FORMS
+===================================================== */
+
+.form-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(
+        auto-fit,
+        minmax(220px,1fr)
+    );
+
+    gap:15px;
+
+}
+
+.form-group{
+
+    margin-bottom:15px;
+
+}
+
+label{
+
+    font-weight:bold;
+
+    display:block;
+
+    margin-bottom:6px;
+
+}
+
+input,
+select,
+textarea{
+
+    width:100%;
+
+    padding:11px;
+
+    border:
+    1px solid #cbd5e1;
+
+    border-radius:7px;
+
+    font-size:15px;
+
+    background:#fff;
+
+}
+
+input:focus,
+select:focus,
+textarea:focus{
+
+    outline:
+    2px solid #93c5fd;
+
+    border-color:#2563eb;
+
+}
+
+textarea{
+
+    min-height:120px;
+
+    resize:vertical;
+
+}
+
+
+/* =====================================================
+   ACTIONS
+===================================================== */
+
+.actions{
+
+    display:flex;
+
+    gap:8px;
+
+    flex-wrap:wrap;
+
+    margin-top:12px;
+
+}
+
+
+/* =====================================================
+   TABLE
+===================================================== */
+
+.table-wrap{
+
+    overflow:auto;
+
+}
+
+table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    background:#fff;
+
+}
+
+th,
+td{
+
+    padding:10px;
+
+    border:
+    1px solid #cbd5e1;
+
+    text-align:left;
+
+}
+
+th{
+
+    background:#e2e8f0;
+
+}
+
+
+/* =====================================================
+   TEST HEADER
+===================================================== */
+
+.test-header{
+
+    background:
+    rgba(17,24,39,.98);
+
+    color:#fff;
+
+    padding:14px;
+
+    border-radius:10px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:10px;
+
+    position:sticky;
+
+    top:75px;
+
+    z-index:20;
+
+    box-shadow:
+    0 5px 18px rgba(0,0,0,.20);
+
+}
+
+.timer{
+
+    background:#dc2626;
+
+    padding:9px 15px;
+
+    border-radius:7px;
+
+    font-size:20px;
+
+    font-weight:bold;
+
+}
+
+
+/* =====================================================
+   PROGRESS
+===================================================== */
+
+.progress{
+
+    height:9px;
+
+    background:#cbd5e1;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    margin:15px 0;
+
+}
+
+.progress-bar{
+
+    height:100%;
+
+    background:#2563eb;
+
+    width:0;
+
+}
+
+
+/* =====================================================
+   QUESTION
+===================================================== */
+
+.question-card{
+
+    background:
+    rgba(255,255,255,.98);
+
+    border-radius:14px;
+
+    padding:25px;
+
+    box-shadow:
+    0 5px 22px rgba(15,23,42,.10);
+
+    border-left:
+    5px solid #2563eb;
+
+}
+
+.subject{
+
+    display:inline-block;
+
+    padding:6px 11px;
+
+    background:#ede9fe;
+
+    color:#6d28d9;
+
+    border-radius:20px;
+
+    font-size:13px;
+
+    font-weight:bold;
+
+}
+
+.question{
+
+    font-size:20px;
+
+    line-height:1.6;
+
+    margin:20px 0;
+
+}
+
+
+/* =====================================================
+   OPTIONS
+===================================================== */
+
+.option{
+
+    display:block;
+
+    padding:14px;
+
+    border:
+    1px solid #cbd5e1;
+
+    border-radius:8px;
+
+    margin:10px 0;
+
+    cursor:pointer;
+
+    font-weight:normal;
+
+    background:#fff;
+
+    transition:.2s;
+
+}
+
+.option:hover{
+
+    background:#eff6ff;
+
+    border-color:#60a5fa;
+
+    transform:translateX(2px);
+
+}
+
+.option input{
+
+    width:auto;
+
+    margin-right:8px;
+
+}
+
+
+/* =====================================================
+   PALETTE
+===================================================== */
+
+.palette{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(
+        auto-fill,
+        minmax(42px,1fr)
+    );
+
+    gap:7px;
+
+    margin:15px 0;
+
+}
+
+.palette button{
+
+    padding:9px 5px;
+
+    background:#94a3b8;
+
+}
+
+.palette button.answered{
+
+    background:#16a34a;
+
+}
+
+.palette button.current{
+
+    outline:
+    3px solid #f59e0b;
+
+}
+
+
+/* =====================================================
+   RESULT
+===================================================== */
+
+.result-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(
+        auto-fit,
+        minmax(130px,1fr)
+    );
+
+    gap:14px;
+
+}
+
+.result{
+
+    background:#eff6ff;
+
+    padding:18px;
+
+    border-radius:10px;
+
+    text-align:center;
+
+}
+
+.result strong{
+
+    display:block;
+
+    font-size:27px;
+
+    color:#1d4ed8;
+
+}
+
+
+/* =====================================================
+   REVIEW
+===================================================== */
+
+.review{
+
+    padding:18px;
+
+    background:#fff;
+
+    border-radius:10px;
+
+    margin:12px 0;
+
+    border-left:
+    5px solid #64748b;
+
+}
+
+.review.correct{
+
+    border-left-color:#16a34a;
+
+}
+
+.review.wrong{
+
+    border-left-color:#dc2626;
+
+}
+
+.review.skip{
+
+    border-left-color:#d97706;
+
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer{
+
+    text-align:center;
+
+    padding:35px 20px;
+
+    color:#64748b;
+
+    background:
+    rgba(255,255,255,.96);
+
+    margin-top:30px;
+
+    box-shadow:
+    0 -5px 20px rgba(0,0,0,.06);
+
+}
+
+.footer-title{
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    color:#172033;
+
+    margin-bottom:12px;
+
+}
+
+.footer-links{
+
+    display:flex;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:8px;
+
+    margin:15px auto;
+
+    max-width:1100px;
+
+}
+
+.footer-links button{
+
+    background:transparent;
+
+    color:#2563eb;
+
+    padding:7px 9px;
+
+    font-weight:600;
+
+}
+
+.footer-links button:hover{
+
+    background:#eff6ff;
+
+}
+
+.footer-copy{
+
+    font-size:13px;
+
+    margin-top:15px;
+
+}
+
+
+/* =====================================================
+   POLICY
+===================================================== */
+
+.policy-card{
+
+    max-width:1000px;
+
+    margin:0 auto;
+
+}
+
+.policy-card h1{
+
+    font-size:30px;
+
+    margin-top:0;
+
+    color:#172554;
+
+}
+
+.policy-card h2{
+
+    margin-top:28px;
+
+    color:#1e3a8a;
+
+}
+
+.policy-card h3{
+
+    color:#334155;
+
+}
+
+.policy-card p,
+.policy-card li{
+
+    line-height:1.75;
+
+    color:#475569;
+
+}
+
+.policy-card ul{
+
+    padding-left:25px;
+
+}
+
+.policy-date{
+
+    font-size:13px;
+
+    color:#64748b;
+
+    margin-bottom:25px;
+
+}
+
+.policy-nav{
+
+    display:flex;
+
+    gap:7px;
+
+    flex-wrap:wrap;
+
+    margin-bottom:20px;
+
+}
+
+.policy-nav button{
+
+    background:#e2e8f0;
+
+    color:#172033;
+
+}
+
+.policy-nav button.active{
+
+    background:#2563eb;
+
+    color:#fff;
+
+}
+
+
+/* =====================================================
+   LOGIN
+===================================================== */
+
+.login-card{
+
+    max-width:450px;
+
+    margin:50px auto;
+
+    text-align:center;
+
+}
+
+.login-icon{
+
+    font-size:55px;
+
+    margin-bottom:10px;
+
+}
+
+.login-card h2{
+
+    margin-top:5px;
+
+    color:#172554;
+
+}
+
+.login-error{
+
+    color:#dc2626;
+
+    font-weight:bold;
+
+    margin-top:12px;
+
+    min-height:20px;
+
+}
+
+
+/* =====================================================
+   ADMIN
+===================================================== */
+
+.admin-top{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:10px;
+
+    flex-wrap:wrap;
+
+}
+
+.admin-tab{
+
+    margin-top:20px;
+
+}
+
+
+/* =====================================================
+   TEST CONTROLS
+===================================================== */
+
+.test-controls{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:10px;
+
+    flex-wrap:wrap;
+
+    margin-top:18px;
+
+}
+
+.test-navigation{
+
+    display:flex;
+
+    gap:8px;
+
+    flex-wrap:wrap;
+
+}
+
+.test-exit{
+
+    display:flex;
+
+    gap:8px;
+
+    flex-wrap:wrap;
+
+}
+
+
+/* =====================================================
+   POLICY ADMIN
+===================================================== */
+
+.policy-admin-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    250px 1fr;
+
+    gap:18px;
+
+}
+
+.policy-menu{
+
+    background:#f8fafc;
+
+    border:
+    1px solid #e2e8f0;
+
+    border-radius:10px;
+
+    padding:10px;
+
+    height:max-content;
+
+}
+
+.policy-menu button{
+
+    width:100%;
+
+    text-align:left;
+
+    margin-bottom:6px;
+
+    background:#fff;
+
+    color:#172033;
+
+    border:
+    1px solid #e2e8f0;
+
+}
+
+.policy-menu button.active{
+
+    background:#2563eb;
+
+    color:#fff;
+
+}
+
+.policy-editor textarea{
+
+    min-height:400px;
+
+    font-family:Arial,sans-serif;
+
+    line-height:1.6;
+
+}
+
+
+/* =====================================================
+   NOTICE
+===================================================== */
+
+.notice{
+
+    padding:13px 15px;
+
+    border-radius:8px;
+
+    background:#eff6ff;
+
+    border-left:
+    4px solid #2563eb;
+
+    margin:15px 0;
+
+    color:#334155;
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width:700px){
+
+    .hero h1{
+        font-size:30px;
+    }
+
+    .hero p{
+        font-size:16px;
+    }
+
+    .test-header{
+
+        top:65px;
+
+        flex-direction:column;
+
+        align-items:stretch;
+
+    }
+
+    .question{
+
+        font-size:18px;
+
+    }
+
+    .policy-admin-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    header{
+
+        padding:12px 3%;
+
+    }
+
+    .container{
+
+        width:96%;
+
+    }
+
+}
+
+
+/* =====================================================
+   EXTRA MOBILE BACKGROUND
+===================================================== */
+
+@media(max-width:600px){
+
+    body{
+
+        background-attachment:
+        scroll;
+
+        background-position:
+        center top;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header>
+
+<div class="logo">
+🎯 AspirantTest.in
+</div>
+
+
+<nav>
+
+<button onclick="page('home')">
+Home
+</button>
+
+
+<button onclick="scrollToExams()">
+Mock Tests
+</button>
+
+
+<button onclick="openPolicy('about')">
+About
+</button>
+
+
+<button onclick="openPolicy('contact')">
+Contact
+</button>
+
+
+<button
+onclick="page('adminLogin')"
+class="dark"
+>
+Admin
+</button>
+
+</nav>
+
+</header>
+
+
+
+<div class="container">
+
+
+<!-- =====================================================
+     HOME
+===================================================== -->
+
+<section id="home">
+
+
+<div class="hero">
+
+<h1>
+🎯 AspirantTest.in
+</h1>
+
+
+<p>
+SSC, Banking, Railway, Police, Defence और सभी Competitive Exams के Online Mock Tests
+</p>
+
+
+<!--
+=========================================================
+IMPORTANT:
+
+Home page से START TEST button intentionally हटाया गया है।
+
+अब flow:
+
+Home
+ ↓
+Exam
+ ↓
+View Tests
+ ↓
+Start Test
+
+=========================================================
+-->
+
+</div>
+
+
+
+<div class="card">
+
+<h2>
+📚 Available Exams
+</h2>
+
+
+<div
+class="grid"
+id="examCards"
+>
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     ADMIN LOGIN
+===================================================== -->
+
+<section
+id="adminLogin"
+class="hidden"
+>
+
+<div class="card login-card">
+
+
+<div class="login-icon">
+🔐
+</div>
+
+
+<h2>
+Admin Login
+</h2>
+
+
+<div class="form-group">
+
+<label>
+Username
+</label>
+
+<input
+id="adminUsername"
+type="text"
+placeholder="Enter username"
+>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+Password
+</label>
+
+<input
+id="adminPassword"
+type="password"
+placeholder="Enter password"
+>
+
+</div>
+
+
+<button
+onclick="adminLogin()"
+class="purple"
+style="width:100%"
+>
+Login
+</button>
+
+
+<div
+id="loginError"
+class="login-error"
+>
+</div>
+
+
+<br>
+
+
+<button
+onclick="page('home')"
+class="gray"
+>
+← Back
+</button>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     ADMIN DASHBOARD
+===================================================== -->
+
+<section
+id="admin"
+class="hidden"
+>
+
+
+<div class="card">
+
+
+<div class="admin-top">
+
+
+<div>
+
+<h2>
+⚙️ Admin Dashboard
+</h2>
+
+<p>
+Manage Mock Tests, Questions और Policies
+</p>
+
+</div>
+
+
+<div class="actions">
+
+
+<button
+onclick="showAdminTab('addTest')"
+class="green"
+>
+➕ Add Test
+</button>
+
+
+<button
+onclick="showAdminTab('manage')"
+>
+📋 Manage Tests
+</button>
+
+
+<button
+onclick="showAdminTab('policies')"
+class="purple"
+>
+📄 Policies
+</button>
+
+
+<button
+onclick="backupData()"
+class="orange"
+>
+💾 Backup
+</button>
+
+
+<button
+onclick="adminLogout()"
+class="red"
+>
+Logout
+</button>
+
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- =====================================================
+     ADD TEST
+===================================================== -->
+
+<div
+id="addTest"
+class="admin-tab card"
+>
+
+
+<h2>
+➕ Add New Mock Test
+</h2>
+
+
+<div class="notice">
+
+Test questions JSON format में paste करें।
+
+<br><br>
+
+
+Example:
+
+
+<pre>
+[
+ {
+  "question":"भारत की राजधानी क्या है?",
+  "options":["दिल्ली","मुंबई","जयपुर","लखनऊ"],
+  "answer":0,
+  "subject":"General Knowledge",
+  "explanation":"भारत की राजधानी नई दिल्ली है।"
+ }
+]
+</pre>
+
+</div>
+
+
+<div class="form-grid">
+
+
+<div class="form-group">
+
+<label>
+Test Title
+</label>
+
+<input
+id="testTitle"
+placeholder="SSC CGL Tier 1 Mock Test 1"
+>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+Exam
+</label>
+
+<select id="testExam">
+</select>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+Duration (Minutes)
+</label>
+
+<input
+id="testDuration"
+type="number"
+value="60"
+>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+Marks Per Question
+</label>
+
+<input
+id="testMarks"
+type="number"
+value="2"
+step="0.01"
+>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+Negative Marking
+</label>
+
+<input
+id="testNegative"
+type="number"
+value="0.50"
+step="0.01"
+>
+
+</div>
+
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+Questions JSON
+</label>
+
+<textarea
+id="testQuestions"
+placeholder='[{"question":"...","options":["...","...","...","..."],"answer":0,"subject":"GK","explanation":"..."}]'
+></textarea>
+
+</div>
+
+
+<div class="actions">
+
+
+<button
+onclick="addTest()"
+class="green"
+>
+Save Test
+</button>
+
+
+<button
+onclick="clearTestForm()"
+class="gray"
+>
+Clear
+</button>
+
+
+</div>
+
+
+<div
+id="addTestMessage"
+class="notice hidden"
+>
+</div>
+
+</div>
+
+
+
+<!-- =====================================================
+     MANAGE TESTS
+===================================================== -->
+
+<div
+id="manage"
+class="admin-tab card hidden"
+>
+
+
+<div class="admin-top">
+
+<h2>
+📋 Manage Tests
+</h2>
+
+
+<button
+onclick="loadManage()"
+class="gray"
+>
+Refresh
+</button>
+
+</div>
+
+
+<div class="table-wrap">
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>#</th>
+
+<th>Test</th>
+
+<th>Exam</th>
+
+<th>Questions</th>
+
+<th>Duration</th>
+
+<th>Actions</th>
+
+</tr>
+
+</thead>
+
+
+<tbody id="manageBody">
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+
+
+<!-- =====================================================
+     POLICIES
+===================================================== -->
+
+<div
+id="policies"
+class="admin-tab card hidden"
+>
+
+
+<h2>
+📄 Policy Management
+</h2>
+
+
+<div class="policy-admin-grid">
+
+
+<div
+id="policyMenu"
+class="policy-menu"
+>
+</div>
+
+
+<div class="policy-editor">
+
+
+<div class="form-group">
+
+<label>
+Policy Title
+</label>
+
+<input
+id="policyTitleInput"
+>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+Policy Content
+</label>
+
+<textarea
+id="policyContentInput"
+></textarea>
+
+</div>
+
+
+<div class="actions">
+
+
+<button
+onclick="savePolicy()"
+class="green"
+>
+Save Policy
+</button>
+
+
+<button
+onclick="resetCurrentPolicy()"
+class="gray"
+>
+Restore Default
+</button>
+
+
+</div>
+
+
+<p id="policyAdminMessage">
+</p>
+
+
+</div>
+
+</div>
+
+</div>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     TEST PAGE
+===================================================== -->
+
+<section
+id="testPage"
+class="hidden"
+>
+
+
+<div class="test-header">
+
+
+<div>
+
+<strong id="testTitleDisplay">
+Mock Test
+</strong>
+
+
+<div id="testProgressText">
+Question 1 of 10
+</div>
+
+</div>
+
+
+<div
+class="timer"
+id="timer"
+>
+00:00
+</div>
+
+</div>
+
+
+
+<div class="progress">
+
+<div
+id="progressBar"
+class="progress-bar"
+>
+</div>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>
+Question Palette
+</h3>
+
+
+<div
+id="palette"
+class="palette"
+>
+</div>
+
+</div>
+
+
+
+<div
+id="questionContainer"
+class="question-card"
+>
+</div>
+
+
+
+<div class="test-controls">
+
+
+<div class="test-navigation">
+
+
+<button
+onclick="previousQuestion()"
+class="gray"
+>
+← Previous
+</button>
+
+
+<button
+onclick="nextQuestion()"
+>
+Next →
+</button>
+
+</div>
+
+
+<div class="test-exit">
+
+
+<button
+onclick="submitTest()"
+class="green"
+>
+Submit Test
+</button>
+
+
+<button
+onclick="exitTest()"
+class="red"
+>
+Exit
+</button>
+
+</div>
+
+</div>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     RESULT
+===================================================== -->
+
+<section
+id="resultPage"
+class="hidden"
+>
+
+
+<div class="card">
+
+<h2>
+📊 Test Result
+</h2>
+
+
+<div id="resultSummary">
+</div>
+
+</div>
+
+
+<div class="card">
+
+<h2>
+📝 Detailed Solutions
+</h2>
+
+
+<div id="solutions">
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     POLICY PAGE
+===================================================== -->
+
+<section
+id="policyPage"
+class="hidden"
+>
+
+
+<div class="card policy-card">
+
+
+<div
+id="policyNav"
+class="policy-nav"
+>
+</div>
+
+
+<h1 id="policyPageTitle">
+Policy
+</h1>
+
+
+<div
+id="policyUpdated"
+class="policy-date"
+>
+</div>
+
+
+<div id="policyPageContent">
+</div>
+
+
+<br>
+
+
+<button
+onclick="page('home')"
+>
+← Back To Home
+</button>
+
+
+</div>
+
+</section>
+
+
+</div>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+
+<div class="footer-title">
+🎯 AspirantTest.in
+</div>
+
+
+<p>
+All Competitive Exam Test Platform
+</p>
+
+
+<div class="footer-links">
+
+
+<button onclick="openPolicy('about')">
+About Us
+</button>
+
+
+<button onclick="openPolicy('privacy')">
+Privacy Policy
+</button>
+
+
+<button onclick="openPolicy('terms')">
+Terms & Conditions
+</button>
+
+
+<button onclick="openPolicy('disclaimer')">
+Disclaimer
+</button>
+
+
+<button onclick="openPolicy('cookies')">
+Cookie Policy
+</button>
+
+
+<button onclick="openPolicy('userAgreement')">
+User Agreement
+</button>
+
+
+<button onclick="openPolicy('copyright')">
+Copyright / DMCA
+</button>
+
+
+<button onclick="openPolicy('security')">
+Data & Security
+</button>
+
+
+<button onclick="openPolicy('accessibility')">
+Accessibility
+</button>
+
+
+<button onclick="openPolicy('grievance')">
+Grievance / Complaints
+</button>
+
+
+</div>
+
+
+<div class="footer-copy">
+
+©
+<span id="footerYear"></span>
+
+AspirantTest.in — All Rights Reserved.
+
+</div>
+
+
+</footer>
+
+
+
+<script>
+
+/* =====================================================
+   GLOBAL VARIABLES
+===================================================== */
+
+let tests=[];
+
+let currentTest=null;
+
+let currentQuestion=0;
+
+let answers=[];
+
+let timeLeft=0;
+
+let timer=null;
+
+let submitted=false;
+
+let adminLoggedIn=false;
+
+let currentPolicy="privacy";
+
+
+/* =====================================================
+   EXAMS
+===================================================== */
+
+const EXAMS=[
+
+{
+id:"ssc-cgl",
+name:"SSC CGL",
+icon:"📚",
+description:"SSC CGL Tier 1 और Tier 2 Mock Tests"
+},
+
+{
+id:"ssc-chsl",
+name:"SSC CHSL",
+icon:"📝",
+description:"SSC CHSL Online Mock Tests"
+},
+
+{
+id:"ssc-gd",
+name:"SSC GD",
+icon:"🪖",
+description:"SSC GD Constable Practice Tests"
+},
+
+{
+id:"ssc-mts",
+name:"SSC MTS",
+icon:"📖",
+description:"SSC MTS Mock Tests"
+},
+
+{
+id:"banking",
+name:"Banking",
+icon:"🏦",
+description:"IBPS, SBI और Banking Exams"
+},
+
+{
+id:"railway",
+name:"Railway",
+icon:"🚆",
+description:"RRB NTPC, Group D और Railway Tests"
+},
+
+{
+id:"police",
+name:"Police",
+icon:"👮",
+description:"Police भर्ती Practice Tests"
+},
+
+{
+id:"defence",
+name:"Defence",
+icon:"🎖️",
+description:"Defence Exam Mock Tests"
+}
+
+];
+
+
+/* =====================================================
+   DEFAULT POLICIES
+===================================================== */
+
+const DEFAULT_POLICIES={
+
+privacy:{
+title:"Privacy Policy",
+content:`
+<h2>Privacy Policy</h2>
+
+<p>
+AspirantTest.in आपके privacy का सम्मान करता है।
+यह website competitive exam preparation के लिए online mock tests उपलब्ध कराती है।
+</p>
+
+<h3>Information Collection</h3>
+
+<p>
+हम website को बेहतर बनाने के लिए आवश्यक technical information collect कर सकते हैं।
+</p>
+
+<h3>Cookies</h3>
+
+<p>
+Website बेहतर experience देने के लिए cookies या local storage का उपयोग कर सकती है।
+</p>
+
+<h3>Contact</h3>
+
+<p>
+Privacy से संबंधित किसी भी प्रश्न के लिए website administrator से संपर्क करें।
+</p>
+`
+},
+
+terms:{
+title:"Terms & Conditions",
+content:`
+<h2>Terms & Conditions</h2>
+
+<p>
+AspirantTest.in का उपयोग करते समय users को सभी लागू नियमों का पालन करना होगा।
+</p>
+
+<h3>Mock Tests</h3>
+
+<p>
+Mock tests केवल educational और practice purposes के लिए हैं।
+</p>
+
+<h3>Content</h3>
+
+<p>
+Website पर उपलब्ध content को बिना permission reproduce या redistribute न करें।
+</p>
+`
+},
+
+disclaimer:{
+title:"Disclaimer",
+content:`
+<h2>Disclaimer</h2>
+
+<p>
+AspirantTest.in एक independent educational platform है।
+यह किसी सरकारी recruitment organization की official website नहीं है जब तक स्पष्ट रूप से ऐसा न बताया गया हो।
+</p>
+
+<p>
+Mock tests और questions केवल practice purposes के लिए हैं।
+</p>
+`
+},
+
+about:{
+title:"About Us",
+content:`
+<h2>About AspirantTest.in</h2>
+
+<p>
+AspirantTest.in competitive exam aspirants के लिए online practice platform है।
+</p>
+
+<p>
+यहाँ SSC, Banking, Railway, Police, Defence और अन्य competitive examinations के mock tests उपलब्ध कराए जाते हैं।
+</p>
+`
+},
+
+cookies:{
+title:"Cookie Policy",
+content:`
+<h2>Cookie Policy</h2>
+
+<p>
+AspirantTest.in बेहतर user experience के लिए cookies और local storage technologies का उपयोग कर सकती है।
+</p>
+`
+},
+
+userAgreement:{
+title:"User Agreement",
+content:`
+<h2>User Agreement</h2>
+
+<p>
+Website का उपयोग करके user इन terms और conditions से सहमत होता है।
+</p>
+
+<p>
+Website का उपयोग केवल lawful educational purposes के लिए करें।
+</p>
+`
+},
+
+copyright:{
+title:"Copyright / DMCA",
+content:`
+<h2>Copyright / DMCA</h2>
+
+<p>
+AspirantTest.in पर उपलब्ध original website content copyright protection के अधीन हो सकता है।
+</p>
+
+<p>
+यदि किसी content के संबंध में copyright concern है तो administrator से संपर्क करें।
+</p>
+`
+},
+
+security:{
+title:"Data & Security",
+content:`
+<h2>Data & Security</h2>
+
+<p>
+हम user information को सुरक्षित रखने के लिए reasonable security measures अपनाने का प्रयास करते हैं।
+</p>
+`
+},
+
+accessibility:{
+title:"Accessibility",
+content:`
+<h2>Accessibility</h2>
+
+<p>
+AspirantTest.in सभी users के लिए website को accessible और आसान बनाने का प्रयास करता है।
+</p>
+`
+},
+
+grievance:{
+title:"Grievance / Complaints",
+content:`
+<h2>Grievance / Complaints</h2>
+
+<p>
+Website से संबंधित शिकायत या सुझाव के लिए administrator से संपर्क किया जा सकता है।
+</p>
+`
+},
+
+contact:{
+title:"Contact Us",
+content:`
+<h2>Contact Us</h2>
+
+<p>
+AspirantTest.in से संबंधित किसी भी प्रश्न या सुझाव के लिए administrator से संपर्क करें।
+</p>
+`
+}
+
+};
+
+
+/* =====================================================
+   POLICY INITIALIZE
+===================================================== */
+
+let policies={};
+
+
+function initializePolicies(){
+
+const saved=
+localStorage.getItem("websitePolicies");
+
+
+if(saved){
+
+try{
+
+policies=JSON.parse(saved);
+
+}
+catch(e){
+
+policies={...DEFAULT_POLICIES};
+
+}
+
+}
+else{
+
+policies={...DEFAULT_POLICIES};
+
+localStorage.setItem(
+"websitePolicies",
+JSON.stringify(policies)
+);
+
+}
+
+}
+
+
+/* =====================================================
+   LOAD TESTS
+===================================================== */
+
+function loadTests(){
+
+const saved=
+localStorage.getItem("competitiveTests");
+
+
+if(saved){
+
+try{
+
+tests=JSON.parse(saved);
+
+}
+catch(e){
+
+tests=[];
+
+}
+
+}
+else{
+
+tests=[];
+
+}
+
+}
+
+
+/* =====================================================
+   SAVE DATA
+===================================================== */
+
+function saveData(){
+
+localStorage.setItem(
+"competitiveTests",
+JSON.stringify(tests)
+);
+
+}
+
+
+/* =====================================================
+   PAGE
+===================================================== */
+
+function page(id){
+
+document
+.querySelectorAll(
+"#home,#adminLogin,#admin,#testPage,#resultPage,#policyPage"
+)
+.forEach(x=>
+x.classList.add("hidden")
+);
+
+
+const el=
+document.getElementById(id);
+
+
+if(el){
+
+el.classList.remove("hidden");
+
+}
+
+
+window.scrollTo({
+
+top:0,
+
+behavior:"smooth"
+
+});
+
+}
+
+
+/* =====================================================
+   LOAD EXAMS
+===================================================== */
+
+function loadExams(){
+
+const box=
+document.getElementById("examCards");
+
+
+if(!box)return;
+
+
+const counts={};
+
+
+tests.forEach(t=>{
+
+counts[t.exam]=
+(counts[t.exam]||0)+1;
+
+});
+
+
+box.innerHTML=
+
+EXAMS.map(exam=>`
+
+<div class="exam-card">
+
+<div style="font-size:35px">
+${exam.icon}
+</div>
+
+<h3>
+${escape(exam.name)}
+</h3>
+
+<p>
+${escape(exam.description)}
+</p>
+
+<div class="info">
+
+<span>
+📋 ${counts[exam.id]||0} Mock Tests
+</span>
+
+</div>
+
+<button
+onclick="showExamTests('${exam.id}')"
+>
+View Tests
+</button>
+
+</div>
+
+`).join("");
+
+}
+
+
+/* =====================================================
+   SHOW EXAM TESTS
+
+   IMPORTANT:
+   START TEST BUTTON केवल यहाँ दिखाई देगा।
+   HOME PAGE पर START TEST button नहीं है।
+===================================================== */
+
+function showExamTests(examId){
+
+const exam=
+EXAMS.find(x=>x.id===examId);
+
+
+if(!exam)return;
+
+
+const examTests=
+tests.filter(t=>t.exam===examId);
+
+
+const box=
+document.getElementById("examCards");
+
+
+box.innerHTML=`
+
+<div
+class="card"
+style="grid-column:1/-1"
+>
+
+<div class="admin-top">
+
+<div>
+
+<h2>
+${exam.icon}
+${escape(exam.name)}
+</h2>
+
+<p>
+${escape(exam.description)}
+</p>
+
+</div>
+
+
+<button
+onclick="loadExams()"
+class="gray"
+>
+← All Exams
+</button>
+
+
+</div>
+
+</div>
+
+
+${
+examTests.length
+
+?
+
+examTests.map(test=>`
+
+<div class="exam-card">
+
+<span class="badge free">
+FREE TEST
+</span>
+
+
+<h3>
+${escape(test.title)}
+</h3>
+
+
+<div class="info">
+
+<span>
+📝 Questions:
+${test.questions.length}
+</span>
+
+<span>
+⏱️ Duration:
+${test.duration} Minutes
+</span>
+
+<span>
+➕ Marks:
+${test.marks}
+</span>
+
+<span>
+➖ Negative:
+${test.negative}
+</span>
+
+</div>
+
+
+<!--
+START TEST BUTTON
+अब केवल यहाँ दिखेगा
+-->
+
+<button
+onclick="startTest('${test.id}')"
+class="green"
+>
+🚀 Start Test
+</button>
+
+
+</div>
+
+`).join("")
+
+:
+
+`
+
+<div
+class="card"
+style="grid-column:1/-1;text-align:center"
+>
+
+<h3>
+No Mock Test Available
+</h3>
+
+<p>
+इस exam के लिए अभी कोई test available नहीं है।
+</p>
+
+</div>
+
+`
+
+}
+
+`;
+
+}
+
+
+/* =====================================================
+   SCROLL
+===================================================== */
+
+function scrollToExams(){
+
+document
+.getElementById("examCards")
+.scrollIntoView({
+
+behavior:"smooth"
+
+});
+
+}
+
+
+/* =====================================================
+   ADMIN LOGIN
+===================================================== */
+
+function adminLogin(){
+
+const username=
+document
+.getElementById("adminUsername")
+.value
+.trim();
+
+
+const password=
+document
+.getElementById("adminPassword")
+.value;
+
+
+const error=
+document.getElementById("loginError");
+
+
+if(
+username==="patelji9091" &&
+password==="patel@2006"
+){
+
+adminLoggedIn=true;
+
+error.innerText="";
+
+page("admin");
+
+showAdminTab("addTest");
+
+}
+else{
+
+error.innerText=
+"❌ Invalid username or password";
+
+}
+
+}
+
+
+/* =====================================================
+   ADMIN LOGOUT
+===================================================== */
+
+function adminLogout(){
+
+adminLoggedIn=false;
+
+page("home");
+
+}
+
+
+/* =====================================================
+   ADMIN TAB
+===================================================== */
+
+function showAdminTab(tab){
+
+if(!adminLoggedIn)return;
+
+
+document
+.querySelectorAll(".admin-tab")
+.forEach(x=>
+x.classList.add("hidden")
+);
+
+
+const el=
+document.getElementById(tab);
+
+
+if(el){
+
+el.classList.remove("hidden");
+
+}
+
+
+if(tab==="manage"){
+
+loadManage();
+
+}
+
+
+if(tab==="policies"){
+
+loadPolicyMenu();
+
+}
+
+}
+
+
+/* =====================================================
+   LOAD EXAM SELECT
+===================================================== */
+
+function loadExamSelect(){
+
+const select=
+document.getElementById("testExam");
+
+
+if(!select)return;
+
+
+select.innerHTML=
+
+EXAMS.map(e=>`
+
+<option value="${e.id}">
+${escape(e.name)}
+</option>
+
+`).join("");
+
+}
+
+
+/* =====================================================
+   ADD TEST
+===================================================== */
+
+function addTest(){
+
+if(!adminLoggedIn)return;
+
+
+const title=
+document
+.getElementById("testTitle")
+.value
+.trim();
+
+
+const exam=
+document
+.getElementById("testExam")
+.value;
+
+
+const duration=
+Number(
+document
+.getElementById("testDuration")
+.value
+);
+
+
+const marks=
+Number(
+document
+.getElementById("testMarks")
+.value
+);
+
+
+const negative=
+Number(
+document
+.getElementById("testNegative")
+.value
+);
+
+
+const json=
+document
+.getElementById("testQuestions")
+.value
+.trim();
+
+
+const msg=
+document
+.getElementById("addTestMessage");
+
+
+if(!title){
+
+showAddMessage(
+"❌ Test title required.",
+true
+);
+
+return;
+
+}
+
+
+if(!json){
+
+showAddMessage(
+"❌ Questions JSON required.",
+true
+);
+
+return;
+
+}
+
+
+let questions;
+
+
+try{
+
+questions=
+JSON.parse(json);
+
+}
+catch(e){
+
+showAddMessage(
+"❌ Invalid JSON format.",
+true
+);
+
+return;
+
+}
+
+
+if(
+!Array.isArray(questions) ||
+!questions.length
+){
+
+showAddMessage(
+"❌ Questions array empty है.",
+true
+);
+
+return;
+
+}
+
+
+for(const q of questions){
+
+if(
+!q.question ||
+!Array.isArray(q.options) ||
+q.options.length<2 ||
+typeof q.answer!=="number"
+){
+
+showAddMessage(
+"❌ Question format गलत है.",
+true
+);
+
+return;
+
+}
+
+}
+
+
+const test={
+
+id:
+"test_"+Date.now(),
+
+title,
+
+exam,
+
+duration:
+duration||60,
+
+marks:
+Number.isFinite(marks)
+?
+marks
+:
+2,
+
+negative:
+Number.isFinite(negative)
+?
+negative
+:
+0.5,
+
+questions,
+
+created:
+new Date().toISOString()
+
+};
+
+
+tests.push(test);
+
+
+saveData();
+
+loadExams();
+
+clearTestForm();
+
+
+showAddMessage(
+"✅ Test successfully added.",
+false
+);
+
+}
+
+
+/* =====================================================
+   ADD MESSAGE
+===================================================== */
+
+function showAddMessage(text,error){
+
+const msg=
+document.getElementById(
+"addTestMessage"
+);
+
+
+msg.classList.remove("hidden");
+
+
+msg.innerText=text;
+
+
+msg.style.borderLeftColor=
+error
+?
+"#dc2626"
+:
+"#16a34a";
+
+
+msg.style.background=
+error
+?
+"#fef2f2"
+:
+"#f0fdf4";
+
+}
+
+
+/* =====================================================
+   CLEAR TEST FORM
+===================================================== */
+
+function clearTestForm(){
+
+document
+.getElementById("testTitle")
+.value="";
+
+
+document
+.getElementById("testDuration")
+.value="60";
+
+
+document
+.getElementById("testMarks")
+.value="2";
+
+
+document
+.getElementById("testNegative")
+.value="0.50";
+
+
+document
+.getElementById("testQuestions")
+.value="";
+
+}
+
+
+/* =====================================================
+   MANAGE
+===================================================== */
+
+function loadManage(){
+
+if(!adminLoggedIn)return;
+
+
+const body=
+document.getElementById(
+"manageBody"
+);
+
+
+if(!body)return;
+
+
+if(!tests.length){
+
+body.innerHTML=`
+
+<tr>
+
+<td
+colspan="6"
+style="text-align:center"
+>
+
+No tests available.
+
+</td>
+
+</tr>
+
+`;
+
+return;
+
+}
+
+
+body.innerHTML=
+
+tests.map((test,index)=>{
+
+const exam=
+EXAMS.find(e=>
+e.id===test.exam
+);
+
+
+return `
+
+<tr>
+
+<td>
+${index+1}
+</td>
+
+
+<td>
+${escape(test.title)}
+</td>
+
+
+<td>
+${
+exam
+?
+escape(exam.name)
+:
+escape(test.exam)
+}
+</td>
+
+
+<td>
+${test.questions.length}
+</td>
+
+
+<td>
+${test.duration} min
+</td>
+
+
+<td>
+
+<div class="actions">
+
+<button
+onclick="previewTest('${test.id}')"
+class="gray"
+>
+Preview
+</button>
+
+
+<button
+onclick="deleteTest('${test.id}')"
+class="red"
+>
+Delete
+</button>
+
+</div>
+
+</td>
+
+</tr>
+
+`;
+
+}).join("");
+
+}
+
+
+/* =====================================================
+   PREVIEW
+===================================================== */
+
+function previewTest(id){
+
+const test=
+tests.find(t=>t.id===id);
+
+
+if(!test)return;
+
+
+alert(
+
+"Test: "
++
+test.title
++
+"\nQuestions: "
++
+test.questions.length
++
+"\nDuration: "
++
+test.duration
++
+" minutes"
+
+);
+
+}
+
+
+/* =====================================================
+   DELETE TEST
+===================================================== */
+
+function deleteTest(id){
+
+if(!adminLoggedIn)return;
+
+
+const test=
+tests.find(t=>t.id===id);
+
+
+if(!test)return;
+
+
+if(
+!confirm(
+`"${test.title}" delete करना है?`
+)
+)
+return;
+
+
+tests=
+tests.filter(
+t=>t.id!==id
+);
+
+
+saveData();
+
+loadManage();
+
+loadExams();
+
+}
+
+
+/* =====================================================
+   START TEST
+===================================================== */
+
+function startTest(id){
+
+const test=
+tests.find(
+t=>t.id===id
+);
+
+
+if(!test)return;
+
+
+currentTest=test;
+
+currentQuestion=0;
+
+answers=
+new Array(
+test.questions.length
+)
+.fill(null);
+
+
+timeLeft=
+test.duration*60;
+
+
+submitted=false;
+
+
+page("testPage");
+
+
+document
+.getElementById(
+"testTitleDisplay"
+)
+.innerText=
+test.title;
+
+
+startTimer();
+
+renderPalette();
+
+renderQuestion();
+
+}
+
+
+/* =====================================================
+   PALETTE
+===================================================== */
+
+function renderPalette(){
+
+const palette=
+document.getElementById(
+"palette"
+);
+
+
+palette.innerHTML=
+
+currentTest.questions
+.map(
+(q,index)=>`
+
+<button
+id="palette-${index}"
+onclick="goQuestion(${index})"
+>
+${index+1}
+</button>
+
+`
+)
+.join("");
+
+
+updatePalette();
+
+}
+
+
+/* =====================================================
+   UPDATE PALETTE
+===================================================== */
+
+function updatePalette(){
+
+currentTest.questions.forEach(
+(q,index)=>{
+
+const btn=
+document.getElementById(
+`palette-${index}`
+);
+
+
+if(!btn)return;
+
+
+btn.classList.toggle(
+"answered",
+answers[index]!==null
+);
+
+
+btn.classList.toggle(
+"current",
+index===currentQuestion
+);
+
+});
+
+}
+
+
+/* =====================================================
+   RENDER QUESTION
+===================================================== */
+
+function renderQuestion(){
+
+if(!currentTest)return;
+
+
+const q=
+currentTest.questions[
+currentQuestion
+];
+
+
+const total=
+currentTest.questions.length;
+
+
+document.getElementById(
+"testProgressText"
+)
+.innerText=
+`Question ${currentQuestion+1} of ${total}`;
+
+
+document.getElementById(
+"progressBar"
+)
+.style.width=
+`${((currentQuestion+1)/total)*100}%`;
+
+
+document.getElementById(
+"questionContainer"
+)
+.innerHTML=`
+
+<div>
+
+<span class="subject">
+
+${escape(
+q.subject ||
+q.section ||
+"General"
+)}
+
+</span>
+
+
+<div class="question">
+
+<strong>
+Q${currentQuestion+1}.
+</strong>
+
+${escape(q.question)}
+
+</div>
+
+
+<div>
+
+${
+q.options
+.map(
+(option,index)=>`
+
+<label class="option">
+
+<input
+
+type="radio"
+
+name="answer"
+
+value="${index}"
+
+${
+answers[currentQuestion]===index
+?
+"checked"
+:
+""
+}
+
+onchange="
+selectAnswer(${index})
+"
+
+>
+
+${escape(option)}
+
+</label>
+
+`
+)
+.join("")
+}
+
+</div>
+
+</div>
+
+`;
+
+
+updatePalette();
+
+}
+
+
+/* =====================================================
+   SELECT ANSWER
+===================================================== */
+
+function selectAnswer(index){
+
+answers[
+currentQuestion
+]=index;
+
+
+updatePalette();
+
+}
+
+
+/* =====================================================
+   GO QUESTION
+===================================================== */
+
+function goQuestion(index){
+
+if(
+index<0 ||
+index>=currentTest.questions.length
+)
+return;
+
+
+currentQuestion=index;
+
+
+renderQuestion();
+
+}
+
+
+/* =====================================================
+   NEXT
+===================================================== */
+
+function nextQuestion(){
+
+if(
+currentQuestion<
+currentTest.questions.length-1
+){
+
+currentQuestion++;
+
+renderQuestion();
+
+}
+
+}
+
+
+/* =====================================================
+   PREVIOUS
+===================================================== */
+
+function previousQuestion(){
+
+if(currentQuestion>0){
+
+currentQuestion--;
+
+renderQuestion();
+
+}
+
+}
+
+
+/* =====================================================
+   EXIT TEST
+===================================================== */
+
+function exitTest(){
+
+if(!currentTest){
+
+page("home");
+
+return;
+
+}
+
+
+const ok=
+confirm(
+"🚪 क्या आप test exit करना चाहते हैं?\n\nआपका current test progress और answers delete हो जाएंगे।"
+);
+
+
+if(!ok)return;
+
+
+clearInterval(timer);
+
+timer=null;
+
+currentTest=null;
+
+currentQuestion=0;
+
+answers=[];
+
+timeLeft=0;
+
+submitted=false;
+
+
+page("home");
+
+}
+
+
+/* =====================================================
+   TIMER
+===================================================== */
+
+function startTimer(){
+
+clearInterval(timer);
+
+
+updateTimer();
+
+
+timer=
+setInterval(()=>{
+
+
+if(!currentTest){
+
+clearInterval(timer);
+
+timer=null;
+
+return;
+
+}
+
+
+timeLeft--;
+
+
+updateTimer();
+
+
+if(timeLeft<=0){
+
+clearInterval(timer);
+
+timer=null;
+
+
+alert(
+"Time Over! Test automatically submitted."
+);
+
+
+finishTest();
+
+}
+
+},1000);
+
+}
+
+
+function updateTimer(){
+
+const min=
+Math.floor(
+timeLeft/60
+);
+
+
+const sec=
+timeLeft%60;
+
+
+document.getElementById(
+"timer"
+)
+.innerText=
+`${String(min).padStart(2,"0")}:${String(sec).padStart(2,"0")}`;
+
+}
+
+
+/* =====================================================
+   SUBMIT
+===================================================== */
+
+function submitTest(){
+
+if(!currentTest)return;
+
+
+if(
+!confirm(
+"क्या आप test submit करना चाहते हैं?"
+)
+)
+return;
+
+
+finishTest();
+
+}
+
+
+/* =====================================================
+   FINISH
+===================================================== */
+
+function finishTest(){
+
+if(submitted)return;
+
+
+if(!currentTest)return;
+
+
+submitted=true;
+
+
+clearInterval(timer);
+
+timer=null;
+
+
+let correct=0;
+
+let wrong=0;
+
+let skipped=0;
+
+let score=0;
+
+
+const subject={};
+
+
+currentTest.questions
+.forEach((q,index)=>{
+
+
+const subjectName=
+q.subject ||
+q.section ||
+"General";
+
+
+if(!subject[subjectName]){
+
+subject[subjectName]={
+
+total:0,
+
+correct:0,
+
+wrong:0,
+
+skip:0
+
+};
+
+}
+
+
+subject[
+subjectName
+].total++;
+
+
+const ans=
+answers[index];
+
+
+if(ans===null){
+
+skipped++;
+
+
+subject[
+subjectName
+].skip++;
+
+}
+else if(
+ans===q.answer
+){
+
+correct++;
+
+
+score+=
+currentTest.marks;
+
+
+subject[
+subjectName
+].correct++;
+
+}
+else{
+
+wrong++;
+
+
+score-=
+currentTest.negative;
+
+
+subject[
+subjectName
+].wrong++;
+
+}
+
+});
+
+
+const total=
+currentTest.questions.length;
+
+
+const maxMarks=
+total*currentTest.marks;
+
+
+const percentage=
+Math.max(
+0,
+(score/maxMarks)*100
+);
+
+
+const attempted=
+correct+wrong;
+
+
+const accuracy=
+attempted
+?
+(correct/attempted)*100
+:
+0;
+
+
+showResult({
+
+correct,
+
+wrong,
+
+skipped,
+
+score,
+
+maxMarks,
+
+percentage,
+
+attempted,
+
+accuracy,
+
+subject
+
+});
+
+}
+
+
+/* =====================================================
+   RESULT
+===================================================== */
+
+function showResult(data){
+
+page("resultPage");
+
+
+document.getElementById(
+"resultSummary"
+)
+.innerHTML=`
+
+<h3>
+${escape(currentTest.title)}
+</h3>
+
+
+<div class="result-grid">
+
+
+<div class="result">
+
+<strong>
+${data.score.toFixed(2)}
+</strong>
+
+Score
+
+</div>
+
+
+<div class="result">
+
+<strong>
+${data.maxMarks}
+</strong>
+
+Maximum
+
+</div>
+
+
+<div class="result">
+
+<strong>
+${data.correct}
+</strong>
+
+Correct
+
+</div>
+
+
+<div class="result">
+
+<strong>
+${data.wrong}
+</strong>
+
+Wrong
+
+</div>
+
+
+<div class="result">
+
+<strong>
+${data.skipped}
+</strong>
+
+Skipped
+
+</div>
+
+
+<div class="result">
+
+<strong>
+${data.percentage.toFixed(2)}%
+</strong>
+
+Percentage
+
+</div>
+
+
+<div class="result">
+
+<strong>
+${data.accuracy.toFixed(2)}%
+</strong>
+
+Accuracy
+
+</div>
+
+
+<div class="result">
+
+<strong>
+${data.attempted}
+</strong>
+
+Attempted
+
+</div>
+
+
+</div>
+
+
+<h3>
+Subject Performance
+</h3>
+
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+
+<th>
+Subject
+</th>
+
+<th>
+Total
+</th>
+
+<th>
+Correct
+</th>
+
+<th>
+Wrong
+</th>
+
+<th>
+Skipped
+</th>
+
+</tr>
+
+
+${
+Object.entries(
+data.subject
+)
+.map(
+([name,s])=>`
+
+<tr>
+
+<td>
+${escape(name)}
+</td>
+
+<td>
+${s.total}
+</td>
+
+<td>
+${s.correct}
+</td>
+
+<td>
+${s.wrong}
+</td>
+
+<td>
+${s.skip}
+</td>
+
+</tr>
+
+`
+)
+.join("")
+}
+
+</table>
+
+</div>
+
+
+<br>
+
+
+<button
+onclick="page('home')"
+>
+Back To Tests
+</button>
+
+`;
+
+
+document.getElementById(
+"solutions"
+)
+.innerHTML=
+
+currentTest.questions
+.map(
+(q,index)=>{
+
+
+const ans=
+answers[index];
+
+
+let cls="skip";
+
+
+let status="Skipped";
+
+
+if(
+ans!==null &&
+ans===q.answer
+){
+
+cls="correct";
+
+status="Correct";
+
+}
+else if(
+ans!==null
+){
+
+cls="wrong";
+
+status="Wrong";
+
+}
+
+
+return `
+
+<div
+class="review ${cls}"
+>
+
+<h3>
+
+Q${index+1}.
+
+${escape(q.question)}
+
+</h3>
+
+
+<p>
+
+<strong>
+Status:
+</strong>
+
+${status}
+
+</p>
+
+
+<p>
+
+<strong>
+Your Answer:
+</strong>
+
+
+${
+ans===null
+?
+"Not Attempted"
+:
+escape(q.options[ans])
+}
+
+</p>
+
+
+<p>
+
+<strong>
+Correct Answer:
+</strong>
+
+${escape(
+q.options[q.answer]
+)}
+
+</p>
+
+
+<p>
+
+<strong>
+Explanation:
+</strong>
+
+${escape(
+q.explanation ||
+"Explanation not available."
+)}
+
+</p>
+
+
+</div>
+
+`;
+
+}
+)
+.join("");
+
+}
+
+
+/* =====================================================
+   BACKUP
+===================================================== */
+
+function backupData(){
+
+if(!adminLoggedIn)return;
+
+
+const backup={
+
+tests:tests,
+
+policies:policies
+
+};
+
+
+const blob=
+new Blob(
+[
+JSON.stringify(
+backup,
+null,
+2
+)
+],
+{
+type:"application/json"
+}
+);
+
+
+const url=
+URL.createObjectURL(blob);
+
+
+const a=
+document.createElement("a");
+
+
+a.href=url;
+
+
+a.download=
+"competitive-exams-full-backup.json";
+
+
+a.click();
+
+
+URL.revokeObjectURL(url);
+
+}
+
+
+/* =====================================================
+   POLICY NAMES
+===================================================== */
+
+const POLICY_NAMES={
+
+privacy:"Privacy Policy",
+
+terms:"Terms & Conditions",
+
+disclaimer:"Disclaimer",
+
+about:"About Us",
+
+cookies:"Cookie Policy",
+
+userAgreement:"User Agreement",
+
+copyright:"Copyright / DMCA",
+
+security:"Data & Security",
+
+accessibility:"Accessibility",
+
+grievance:"Grievance / Complaints",
+
+contact:"Contact Us"
+
+};
+
+
+/* =====================================================
+   POLICY MENU
+===================================================== */
+
+function loadPolicyMenu(){
+
+if(!adminLoggedIn)return;
+
+
+const menu=
+document.getElementById(
+"policyMenu"
+);
+
+
+menu.innerHTML=
+
+Object.entries(
+POLICY_NAMES
+)
+.map(
+([key,name])=>`
+
+<button
+
+class="${
+currentPolicy===key
+?
+"active"
+:
+""
+}"
+
+onclick="
+selectPolicyEditor('${key}')
+"
+
+>
+
+${escape(name)}
+
+</button>
+
+`
+)
+.join("");
+
+
+loadPolicyEditor();
+
+}
+
+
+function selectPolicyEditor(key){
+
+currentPolicy=key;
+
+loadPolicyMenu();
+
+}
+
+
+function loadPolicyEditor(){
+
+if(!policies[currentPolicy])
+return;
+
+
+document.getElementById(
+"policyTitleInput"
+)
+.value=
+policies[currentPolicy].title;
+
+
+document.getElementById(
+"policyContentInput"
+)
+.value=
+policies[currentPolicy].content;
+
+
+document.getElementById(
+"policyAdminMessage"
+)
+.innerText="";
+
+}
+
+
+/* =====================================================
+   SAVE POLICY
+===================================================== */
+
+function savePolicy(){
+
+if(!adminLoggedIn)return;
+
+
+const title=
+document
+.getElementById(
+"policyTitleInput"
+)
+.value
+.trim();
+
+
+const content=
+document
+.getElementById(
+"policyContentInput"
+)
+.value
+.trim();
+
+
+if(!title || !content){
+
+document.getElementById(
+"policyAdminMessage"
+)
+.innerText=
+"❌ Title और Content दोनों जरूरी हैं।";
+
+
+document.getElementById(
+"policyAdminMessage"
+)
+.style.color="#dc2626";
+
+
+return;
+
+}
+
+
+policies[currentPolicy]={
+
+title,
+
+content,
+
+updated:
+new Date()
+.toLocaleDateString("en-IN")
+
+};
+
+
+localStorage.setItem(
+"websitePolicies",
+JSON.stringify(policies)
+);
+
+
+document.getElementById(
+"policyAdminMessage"
+)
+.innerText=
+"✅ Policy successfully updated.";
+
+
+document.getElementById(
+"policyAdminMessage"
+)
+.style.color="#16a34a";
+
+
+loadPolicyMenu();
+
+}
+
+
+/* =====================================================
+   RESET POLICY
+===================================================== */
+
+function resetCurrentPolicy(){
+
+if(!adminLoggedIn)return;
+
+
+if(
+!confirm(
+"इस policy को default content पर restore करना है?"
+)
+)
+return;
+
+
+policies[currentPolicy]={
+
+title:
+DEFAULT_POLICIES[
+currentPolicy
+].title,
+
+content:
+DEFAULT_POLICIES[
+currentPolicy
+].content,
+
+updated:
+new Date()
+.toLocaleDateString("en-IN")
+
+};
+
+
+localStorage.setItem(
+"websitePolicies",
+JSON.stringify(policies)
+);
+
+
+loadPolicyEditor();
+
+
+document.getElementById(
+"policyAdminMessage"
+)
+.innerText=
+"✅ Default policy restored.";
+
+
+document.getElementById(
+"policyAdminMessage"
+)
+.style.color="#16a34a";
+
+}
+
+
+/* =====================================================
+   OPEN POLICY
+===================================================== */
+
+function openPolicy(key){
+
+if(!policies[key])return;
+
+
+currentPolicy=key;
+
+
+document
+.querySelectorAll(
+"#home,#admin,#testPage,#resultPage,#policyPage,#adminLogin"
+)
+.forEach(x=>
+x.classList.add("hidden")
+);
+
+
+document
+.getElementById("policyPage")
+.classList.remove("hidden");
+
+
+document.getElementById(
+"policyPageTitle"
+)
+.innerText=
+policies[key].title;
+
+
+document.getElementById(
+"policyUpdated"
+)
+.innerText=
+policies[key].updated ||
+"Not specified";
+
+
+document.getElementById(
+"policyPageContent"
+)
+.innerHTML=
+policies[key].content;
+
+
+loadPublicPolicyNav();
+
+
+window.scrollTo({
+
+top:0,
+
+behavior:"smooth"
+
+});
+
+}
+
+
+/* =====================================================
+   PUBLIC POLICY NAV
+===================================================== */
+
+function loadPublicPolicyNav(){
+
+const nav=
+document.getElementById(
+"policyNav"
+);
+
+
+nav.innerHTML=
+
+Object.entries(
+POLICY_NAMES
+)
+.map(
+([key,name])=>`
+
+<button
+
+class="${
+currentPolicy===key
+?
+"active"
+:
+""
+}"
+
+onclick="
+openPolicy('${key}')
+"
+
+>
+
+${escape(name)}
+
+</button>
+
+`
+)
+.join("");
+
+}
+
+
+/* =====================================================
+   ESCAPE HTML
+===================================================== */
+
+function escape(value){
+
+return String(value)
+
+.replaceAll(
+"&",
+"&amp;"
+)
+
+.replaceAll(
+"<",
+"&lt;"
+)
+
+.replaceAll(
+">",
+"&gt;"
+)
+
+.replaceAll(
+'"',
+"&quot;"
+)
+
+.replaceAll(
+"'",
+"&#039;"
+);
+
+}
+
+
+/* =====================================================
+   INITIALIZE WEBSITE
+===================================================== */
+
+document.getElementById(
+"footerYear"
+)
+.innerText=
+new Date()
+.getFullYear();
+
+
+initializePolicies();
+
+loadTests();
+
+loadExams();
+
+loadExamSelect();
+
+
+</script>
+
+
+</body>
+</html>
