@@ -199,6 +199,33 @@ box-shadow:0 10px 25px rgba(15,23,42,.15)
 margin:10px 0
 }
 
+.folder-card{
+position:relative;
+overflow:hidden;
+}
+
+.folder-card:before{
+content:"";
+position:absolute;
+top:0;
+left:0;
+right:0;
+height:7px;
+background:#f59e0b;
+}
+
+.folder-card h3{
+font-size:22px;
+}
+
+.folder-card p{
+color:#64748b;
+line-height:1.5;
+min-height:45px;
+}
+
+
+
 .badge{
 display:inline-block;
 padding:5px 10px;
@@ -732,22 +759,25 @@ SSC • Banking • Railway • Police • State Exams • Teaching • Defence 
 </div>
 
 
-<div class="card">
+<div class="card" id="groupSection">
 
 <h2>
-📖 Select Exam
+📁 Select Exam Folder
 </h2>
 
-<div id="examList" class="grid"></div>
+<div id="groupList" class="grid"></div>
 
 </div>
 
+<div class="card hidden" id="examSection">
 
-<div id="categoryArea" class="card hidden">
+<div class="actions">
+<button onclick="showGroups()">⬅️ Back to Folders</button>
+</div>
 
-<h2 id="categoryTitle"></h2>
+<h2 id="selectedGroupTitle">Select Exam</h2>
 
-<div id="categoryList" class="grid"></div>
+<div id="examList" class="grid"></div>
 
 </div>
 
@@ -926,18 +956,6 @@ Select Exam
 </div>
 
 
-<div class="form-group">
-
-<label>
-Category
-</label>
-
-<input
-id="categoryInput"
-placeholder="Example: CGL Tier 1"
->
-
-</div>
 
 
 <div class="form-group">
@@ -1383,184 +1401,89 @@ let adminLoggedIn = false;
 ===================================================== */
 
 const EXAMS = [
-
-{
-id:"ssc-cgl",
-name:"SSC CGL",
-icon:"📚",
-description:"SSC CGL Tier 1 और Tier 2 Mock Tests"
-},
-
-{
-id:"ssc-chsl",
-name:"SSC CHSL",
-icon:"📝",
-description:"SSC CHSL Online Mock Tests"
-},
-
-{
-id:"ssc-gd",
-name:"SSC GD",
-icon:"🪖",
-description:"SSC GD Constable Practice Tests"
-},
-
-{
-id:"ssc-mts",
-name:"SSC MTS",
-icon:"📖",
-description:"SSC MTS Mock Tests"
-},
-
-{
-id:"ssc-stenographer",
-name:"SSC Stenographer",
-icon:"⌨️",
-description:"SSC Stenographer Grade C और Grade D Mock Tests"
-},
-
-{
-id:"ssc-cpo",
-name:"SSC CPO",
-icon:"👮",
-description:"SSC CPO SI Mock Tests"
-},
-
-{
-id:"ssc-selection-post",
-name:"SSC Selection Post",
-icon:"📋",
-description:"SSC Selection Post Mock Tests"
-},
-
-{
-id:"ibps-po",
-name:"IBPS PO",
-icon:"🏦",
-description:"IBPS PO Online Mock Tests"
-},
-
-{
-id:"ibps-clerk",
-name:"IBPS Clerk",
-icon:"🏦",
-description:"IBPS Clerk Online Mock Tests"
-},
-
-{
-id:"sbi-po",
-name:"SBI PO",
-icon:"🏦",
-description:"SBI PO Online Mock Tests"
-},
-
-{
-id:"sbi-clerk",
-name:"SBI Clerk",
-icon:"🏦",
-description:"SBI Clerk Online Mock Tests"
-},
-
-{
-id:"rbi-assistant",
-name:"RBI Assistant",
-icon:"💰",
-description:"RBI Assistant Mock Tests"
-},
-
-{
-id:"rrb-ntpc",
-name:"RRB NTPC",
-icon:"🚆",
-description:"RRB NTPC Online Mock Tests"
-},
-
-{
-id:"rrb-group-d",
-name:"RRB Group D",
-icon:"🚉",
-description:"RRB Group D Online Mock Tests"
-},
-
-{
-id:"rrb-alp",
-name:"RRB ALP",
-icon:"🚆",
-description:"RRB ALP Online Mock Tests"
-},
-
-{
-id:"rrb-technician",
-name:"RRB Technician",
-icon:"🔧",
-description:"RRB Technician Mock Tests"
-},
-
-{
-id:"up-police",
-name:"UP Police",
-icon:"👮",
-description:"UP Police भर्ती Mock Tests"
-},
-
-{
-id:"delhi-police",
-name:"Delhi Police",
-icon:"👮",
-description:"Delhi Police Mock Tests"
-},
-
-{
-id:"bihar-police",
-name:"Bihar Police",
-icon:"👮",
-description:"Bihar Police भर्ती Mock Tests"
-},
-
-{
-id:"rajasthan-police",
-name:"Rajasthan Police",
-icon:"👮",
-description:"Rajasthan Police भर्ती Mock Tests"
-},
-
-{
-id:"agniveer",
-name:"Agniveer",
-icon:"🎖️",
-description:"Agniveer Army, Navy और Air Force Mock Tests"
-},
-
-{
-id:"air-force",
-name:"Air Force",
-icon:"✈️",
-description:"Air Force भर्ती Mock Tests"
-},
-
-{
-id:"navy",
-name:"Indian Navy",
-icon:"⚓",
-description:"Indian Navy भर्ती Mock Tests"
-},
-
-{
-id:"other",
-name:"Other Competitive Exams",
-icon:"📚",
-description:"अन्य Competitive Exam Mock Tests"
-}
-
+{id:"ssc-cgl",name:"SSC CGL",icon:"📚"},
+{id:"ssc-chsl",name:"SSC CHSL",icon:"📝"},
+{id:"ssc-gd",name:"SSC GD",icon:"🪖"},
+{id:"ssc-mts",name:"SSC MTS",icon:"📖"},
+{id:"ssc-cpo",name:"SSC CPO",icon:"👮"},
+{id:"ssc-steno",name:"SSC Stenographer",icon:"⌨️"},
+{id:"ssc-selection-post",name:"SSC Selection Post",icon:"📋"},
+{id:"ibps-po",name:"IBPS PO",icon:"🏦"},
+{id:"ibps-clerk",name:"IBPS Clerk",icon:"💼"},
+{id:"ibps-rrb",name:"IBPS RRB",icon:"🏦"},
+{id:"sbi-po",name:"SBI PO",icon:"🏛️"},
+{id:"sbi-clerk",name:"SBI Clerk",icon:"💳"},
+{id:"rbi-grade-b",name:"RBI Grade B",icon:"💰"},
+{id:"rbi-assistant",name:"RBI Assistant",icon:"💵"},
+{id:"rrb-ntpc",name:"RRB NTPC",icon:"🚆"},
+{id:"rrb-group-d",name:"RRB Group D",icon:"🚉"},
+{id:"rrb-alp",name:"RRB ALP",icon:"🚄"},
+{id:"rrb-technician",name:"RRB Technician",icon:"🔧"},
+{id:"rpf-constable",name:"RPF Constable",icon:"🛡️"},
+{id:"rpf-si",name:"RPF SI",icon:"👮"},
+{id:"up-police",name:"UP Police",icon:"🚔"},
+{id:"delhi-police",name:"Delhi Police",icon:"👮"},
+{id:"bihar-police",name:"Bihar Police",icon:"🛡️"},
+{id:"mp-police",name:"MP Police",icon:"🚓"},
+{id:"rajasthan-police",name:"Rajasthan Police",icon:"👮‍♂️"},
+{id:"agniveer",name:"Agniveer",icon:"🎖️"},
+{id:"afcat",name:"AFCAT",icon:"✈️"},
+{id:"indian-air-force",name:"Indian Air Force",icon:"✈️"},
+{id:"indian-navy",name:"Indian Navy",icon:"⚓"},
+{id:"ctet",name:"CTET",icon:"👨‍🏫"},
+{id:"uptet",name:"UPTET",icon:"📚"},
+{id:"reet",name:"REET",icon:"🧑‍🏫"},
+{id:"kvs",name:"KVS",icon:"🏫"},
+{id:"nvs",name:"NVS",icon:"🏫"},
+{id:"dsssb",name:"DSSSB",icon:"🏛️"},
+{id:"lic",name:"LIC",icon:"📄"},
+{id:"esic",name:"ESIC",icon:"🏥"},
+{id:"epfo",name:"EPFO",icon:"💼"},
+{id:"fci",name:"FCI",icon:"🌾"},
+{id:"other",name:"Other Competitive Exams",icon:"🎯"}
 ];
+
+
+/* =====================================================
+   EXAM FOLDERS
+===================================================== */
+
+const EXAM_GROUPS = [
+{id:"ssc",name:"SSC",icon:"📚",description:"SSC के सभी Exams और Mock Tests"},
+{id:"banking",name:"Banking",icon:"🏦",description:"Banking और Finance Exams"},
+{id:"railway",name:"Railway",icon:"🚆",description:"RRB और Railway Exams"},
+{id:"police",name:"Police",icon:"👮",description:"Police और सुरक्षा भर्ती Exams"},
+{id:"defence",name:"Defence",icon:"🎖️",description:"Defence और Armed Forces Exams"},
+{id:"teaching",name:"Teaching",icon:"👨‍🏫",description:"Teaching और Teacher Eligibility Exams"},
+{id:"government",name:"Agniveer & Army",icon:"🏛️",description:"Government भर्ती और अन्य Exams"},
+{id:"insurance",name:"Insurance & Finance",icon:"💼",description:"LIC, ESIC, EPFO और Finance Exams"},
+{id:"other",name:"Other Competitive Exams",icon:"🎯",description:"अन्य Competitive Exams"}
+];
+
+function getExamGroup(exam){
+const id=String(exam.id||"");
+if(id.startsWith("ssc-")) return "ssc";
+if(["ibps-po","ibps-clerk","ibps-rrb","sbi-po","sbi-clerk","rbi-grade-b","rbi-assistant"].includes(id)) return "banking";
+if(id.startsWith("rrb-") || id.startsWith("rpf-")) return "railway";
+if(id.endsWith("-police")) return "police";
+if(["agniveer","afcat","indian-air-force","indian-navy"].includes(id)) return "defence";
+if(["ctet","uptet","reet","kvs","nvs","dsssb"].includes(id)) return "teaching";
+if(["lic","esic","epfo","fci"].includes(id)) return "insurance";
+return "other";
+}
 
 
 /* =====================================================
    STORAGE
 ===================================================== */
 
-let tests =
-JSON.parse(localStorage.getItem("competitiveTests")) || [];
+let tests = JSON.parse(localStorage.getItem("competitiveTests")) || [];
+
+if(!Array.isArray(tests)) tests=[];
+tests=tests.map((t,i)=>({
+...t,
+sequence:(Number(t.sequence)>0 ? Number(t.sequence) : i+1)
+}));
 
 
 function saveData(){
@@ -1999,7 +1922,7 @@ document.getElementById(name)
 
 if(name==="home"){
 
-loadExams();
+showGroups();
 
 }
 
@@ -2010,206 +1933,102 @@ loadExams();
    LOAD EXAMS
 ===================================================== */
 
-function loadExams(){
+function loadExams(groupId){
 
 const box=document.getElementById("examList");
+const examSection=document.getElementById("examSection");
+const group=EXAM_GROUPS.find(g=>g.id===groupId);
 
-box.innerHTML=EXAMS.map(exam=>`
+if(!group)return;
 
+document.getElementById("selectedGroupTitle").innerText=`${group.icon} ${group.name} – Exams`;
+
+const groupExams=EXAMS.filter(exam=>getExamGroup(exam)===groupId);
+
+box.innerHTML=groupExams.map(exam=>{
+const count=tests.filter(t=>t.exam===exam.name).length;
+return `
 <div class="exam-card">
+<div style="font-size:35px">${exam.icon}</div>
+<h3>${exam.name}</h3>
+<div class="info"><span>📝 ${count} Tests Available</span></div>
+<button onclick="selectExam('${exam.id}')">View Tests</button>
+</div>`;
+}).join("");
 
-<div style="font-size:35px">
-${exam.icon}
-</div>
-
-<h3>
-${exam.name}
-</h3>
-
-<div class="info">
-
-<span>
-${exam.categories.length} Categories
-</span>
-
-</div>
-
-<button
-onclick="selectExam('${exam.id}')"
->
-View Exams
-</button>
-
-</div>
-
-`).join("");
-
+examSection.classList.remove("hidden");
+document.getElementById("groupSection").classList.add("hidden");
+window.scrollTo({top:examSection.offsetTop-20,behavior:"smooth"});
 }
 
+function loadGroups(){
+const box=document.getElementById("groupList");
+if(!box)return;
+
+box.innerHTML=EXAM_GROUPS.map(group=>{
+const groupExams=EXAMS.filter(exam=>getExamGroup(exam)===group.id);
+const count=groupExams.reduce((total,exam)=>total+tests.filter(t=>t.exam===exam.name).length,0);
+return `
+<div class="exam-card folder-card" onclick="loadExams('${group.id}')" style="cursor:pointer">
+<div style="font-size:52px">${group.icon}</div>
+<span class="badge">${groupExams.length} Exams</span>
+<h3>${group.name}</h3>
+<p>${group.description}</p>
+<div class="info"><span>📁 ${count} Tests Available</span></div>
+<button onclick="event.stopPropagation();loadExams('${group.id}')">View Tests →</button>
+</div>`;
+}).join("");
+}
+
+function showGroups(){
+const groupSection=document.getElementById("groupSection");
+const examSection=document.getElementById("examSection");
+const testArea=document.getElementById("testArea");
+if(examSection)examSection.classList.add("hidden");
+if(testArea)testArea.classList.add("hidden");
+if(groupSection)groupSection.classList.remove("hidden");
+loadGroups();
+}
 
 /* =====================================================
-   SELECT EXAM
+   SELECT EXAM → TESTS
 ===================================================== */
 
 function selectExam(examId){
 
 const exam=EXAMS.find(x=>x.id===examId);
-
 if(!exam)return;
 
-document.getElementById("categoryArea")
-.classList.remove("hidden");
+const list=tests.filter(t=>t.exam===exam.name).sort((a,b)=>
+(Number(a.sequence)||999999)-(Number(b.sequence)||999999) ||
+String(a.created||"").localeCompare(String(b.created||""))
+);
 
-document.getElementById("categoryTitle")
-.innerText=
-`${exam.name} Exams`;
-
-document.getElementById("categoryList").innerHTML=
-
-exam.categories.map(category=>`
-
-<div class="exam-card">
-
-<span class="badge">
-${exam.name}
-</span>
-
-<h3>
-${escape(category)}
-</h3>
-
-<p>
-Available Mock Tests:
-${tests.filter(t=>
-t.exam===exam.name &&
-t.category===category
-).length}
-</p>
-
-<button
-onclick="selectCategory(
-'${escape(category)}',
-'${escape(exam.name)}'
-)"
->
-View Test Series
-</button>
-
-</div>
-
-`).join("");
-
-document.getElementById("testArea")
-.classList.add("hidden");
-
-window.scrollTo({
-top:document.getElementById("categoryArea").offsetTop-20,
-behavior:"smooth"
-});
-
-}
-
-
-/* =====================================================
-   CATEGORY
-===================================================== */
-
-function selectCategory(category,exam){
-
-document.getElementById("testArea")
-.classList.remove("hidden");
-
-document.getElementById("testAreaTitle")
-.innerText=
-`${exam} → ${category}`;
-
-const list=tests
-.filter(t=>
-t.exam===exam &&
-t.category===category
-)
-.sort((a,b)=>a.sequence-b.sequence);
-
+const area=document.getElementById("testArea");
+area.classList.remove("hidden");
+document.getElementById("testAreaTitle").innerText=`${exam.name} – Mock Tests`;
 const box=document.getElementById("publicTestList");
 
-if(list.length===0){
-
-box.innerHTML=`
-
-<div class="card">
-
-<h3>
-No Tests Available
-</h3>
-
-<p>
-इस category में अभी test upload नहीं किया गया है।
-</p>
-
-</div>
-
-`;
-
-return;
-
-}
-
+if(!list.length){
+box.innerHTML=`<div class="card"><h3>No Tests Available</h3><p>इस exam के लिए अभी कोई test upload नहीं किया गया है।</p></div>`;
+}else{
 box.innerHTML=list.map(test=>`
-
 <div class="exam-card">
-
-<span class="badge free">
-FREE TEST
-</span>
-
-<span class="badge">
-TEST ${test.sequence}
-</span>
-
-<h3>
-${escape(test.title)}
-</h3>
-
+<span class="badge free">FREE TEST</span>
+<span class="badge">TEST ${Number(test.sequence)||1}</span>
+<h3>${escape(test.title)}</h3>
 <div class="info">
-
-<span>
-📝 Questions: ${test.questions.length}
-</span>
-
-<span>
-🎯 Marks:
-${test.questions.length*test.marks}
-</span>
-
-<span>
-⏱️ ${test.duration} Minutes
-</span>
-
-<span>
-➖ Negative:
--${test.negative}
-</span>
-
+<span>📝 Questions: ${test.questions.length}</span>
+<span>🎯 Marks: ${test.questions.length*test.marks}</span>
+<span>⏱️ ${test.duration} Minutes</span>
+<span>➖ Negative: -${test.negative}</span>
 </div>
-
-<button
-class="green"
-onclick="startTest(${test.id})"
->
-START TEST
-</button>
-
-</div>
-
-`).join("");
-
-window.scrollTo({
-top:document.getElementById("testArea").offsetTop-20,
-behavior:"smooth"
-});
-
+<button class="green" onclick="startTest(${test.id})">START TEST</button>
+</div>`).join("");
 }
 
+window.scrollTo({top:area.offsetTop-20,behavior:"smooth"});
+}
 
 /* =====================================================
    ADMIN EXAM SELECT
@@ -2277,9 +2096,6 @@ return;
 const exam=
 document.getElementById("examSelect").value;
 
-const category=
-document.getElementById("categoryInput").value.trim();
-
 const sequence=
 Number(
 document.getElementById("sequenceInput").value
@@ -2309,7 +2125,6 @@ document.getElementById("questionsInput")
 
 if(
 !exam ||
-!category ||
 !sequence ||
 !title ||
 !duration ||
@@ -2395,7 +2210,6 @@ q.id=i+1;
 const duplicate=
 tests.find(t=>
 t.exam===exam &&
-t.category===category &&
 t.sequence===sequence
 );
 
@@ -2422,7 +2236,6 @@ tests.push({
 id:Date.now(),
 
 exam,
-category,
 sequence,
 title,
 duration,
@@ -2472,9 +2285,7 @@ function clearForm(){
 
 document.getElementById("examSelect").value="";
 
-document.getElementById("categoryInput").value="";
-
-document.getElementById("sequenceInput").value="";
+document.getElementById("sequenceInput").value="1";
 
 document.getElementById("titleInput").value="";
 
@@ -2514,10 +2325,10 @@ const sorted=[...tests]
 if(a.exam!==b.exam)
 return a.exam.localeCompare(b.exam);
 
-if(a.category!==b.category)
-return a.category.localeCompare(b.category);
-
-return a.sequence-b.sequence;
+const ea=EXAMS.findIndex(x=>x.name===a.exam);
+const eb=EXAMS.findIndex(x=>x.name===b.exam);
+if(ea!==eb)return ea-eb;
+return (Number(a.sequence)||999999)-(Number(b.sequence)||999999);
 
 });
 
@@ -2532,7 +2343,7 @@ box.innerHTML=`
 <tr>
 
 <th>Exam</th>
-<th>Category</th>
+<th>Sequence</th>
 <th>Test</th>
 <th>Type</th>
 <th>Questions</th>
@@ -2552,12 +2363,9 @@ ${sorted.map(test=>`
 ${escape(test.exam)}
 </td>
 
-<td>
-${escape(test.category)}
-</td>
+<td>${Number(test.sequence)||1}</td>
 
 <td>
-${test.sequence}.
 ${escape(test.title)}
 </td>
 
@@ -2617,9 +2425,6 @@ if(!test)return;
 
 document.getElementById("examSelect")
 .value=test.exam;
-
-document.getElementById("categoryInput")
-.value=test.category;
 
 document.getElementById("sequenceInput")
 .value=test.sequence;
@@ -2702,7 +2507,7 @@ document.getElementById("runningTitle")
 
 document.getElementById("runningInfo")
 .innerText=
-`${test.exam} | ${test.category} | ${test.questions.length} Questions`;
+`${test.exam} | Test ${Number(test.sequence)||1} | ${test.questions.length} Questions`;
 
 page("testPage");
 
@@ -3641,7 +3446,8 @@ document.getElementById("footerYear")
 
 initializePolicies();
 
-loadExams();
+// Show exam folders on the main page
+showGroups();
 
 loadExamSelect();
 
