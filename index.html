@@ -7,9 +7,7 @@
 <title>AspirantTest.in - SSC, Banking, Railway & Competitive Exam Mock Tests</title>
 
 <meta name="description" content="AspirantTest.in पर SSC CGL, CHSL, GD, MTS, Banking, Railway, Police, Defence और अन्य competitive exams के online mock tests और practice questions करें.">
-
 <meta name="keywords" content="AspirantTest, mock test, SSC mock test, SSC CGL mock test, SSC CHSL mock test, SSC GD mock test, SSC MTS mock test, Banking mock test, Railway mock test, RRB NTPC mock test, Police mock test, competitive exam test, online test">
-
 <meta name="author" content="AspirantTest.in">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 
@@ -35,9 +33,13 @@
 }
 </script>
 
+<!-- SUPABASE JS -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
 <style>
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
+
 body{
 margin:0;
 font-family:Arial,sans-serif;
@@ -49,6 +51,7 @@ background-size:cover;
 background-position:center;
 background-attachment:fixed;
 }
+
 body:before{
 content:"";
 position:fixed;
@@ -59,6 +62,7 @@ background:
 radial-gradient(circle at 10% 20%,rgba(37,99,235,.10),transparent 25%),
 radial-gradient(circle at 90% 80%,rgba(124,58,237,.10),transparent 25%);
 }
+
 header{
 background:rgba(17,24,39,.97);
 color:#fff;
@@ -73,8 +77,15 @@ position:sticky;
 top:0;
 z-index:100;
 }
+
 .logo{font-size:22px;font-weight:800}
-nav{display:flex;gap:7px;flex-wrap:wrap}
+
+nav{
+display:flex;
+gap:7px;
+flex-wrap:wrap;
+}
+
 button{
 border:0;
 border-radius:7px;
@@ -84,16 +95,31 @@ color:#fff;
 font-weight:700;
 cursor:pointer;
 }
-button:hover{opacity:.9;transform:translateY(-1px)}
+
+button:hover{
+opacity:.9;
+transform:translateY(-1px);
+}
+
 button.red{background:#dc2626}
 button.green{background:#16a34a}
 button.gray{background:#64748b}
 button.orange{background:#d97706}
 button.purple{background:#7c3aed}
 button.dark{background:#111827}
-button:disabled{background:#94a3b8;cursor:not-allowed;transform:none}
 
-.container{width:94%;max-width:1250px;margin:25px auto}
+button:disabled{
+background:#94a3b8;
+cursor:not-allowed;
+transform:none;
+}
+
+.container{
+width:94%;
+max-width:1250px;
+margin:25px auto;
+}
+
 .hidden{display:none!important}
 
 .hero{
@@ -105,7 +131,12 @@ text-align:center;
 margin-bottom:25px;
 box-shadow:0 10px 30px rgba(30,64,175,.25);
 }
-.hero h1{font-size:38px;margin:0 0 12px}
+
+.hero h1{
+font-size:38px;
+margin:0 0 12px;
+}
+
 .hero p{font-size:17px}
 
 .card{
@@ -132,13 +163,19 @@ box-shadow:0 5px 20px rgba(15,23,42,.10);
 border-top:5px solid #2563eb;
 transition:.2s;
 }
+
 .exam-card:hover{
 transform:translateY(-4px);
 box-shadow:0 10px 25px rgba(15,23,42,.15);
 }
+
 .exam-card h3{margin:10px 0}
 
-.folder-card{position:relative;overflow:hidden}
+.folder-card{
+position:relative;
+overflow:hidden;
+}
+
 .folder-card:before{
 content:"";
 position:absolute;
@@ -148,8 +185,14 @@ right:0;
 height:7px;
 background:#f59e0b;
 }
+
 .folder-card h3{font-size:22px}
-.folder-card p{color:#64748b;line-height:1.5;min-height:45px}
+
+.folder-card p{
+color:#64748b;
+line-height:1.5;
+min-height:45px;
+}
 
 .badge{
 display:inline-block;
@@ -161,7 +204,11 @@ font-size:12px;
 font-weight:bold;
 margin-right:4px;
 }
-.badge.free{background:#dcfce7;color:#15803d}
+
+.badge.free{
+background:#dcfce7;
+color:#15803d;
+}
 
 .info{
 display:flex;
@@ -176,8 +223,14 @@ display:grid;
 grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
 gap:15px;
 }
+
 .form-group{margin-bottom:15px}
-label{font-weight:bold;display:block;margin-bottom:6px}
+
+label{
+font-weight:bold;
+display:block;
+margin-bottom:6px;
+}
 
 input,select,textarea{
 width:100%;
@@ -187,11 +240,16 @@ border-radius:7px;
 font-size:15px;
 background:#fff;
 }
+
 input:focus,select:focus,textarea:focus{
 outline:2px solid #93c5fd;
 border-color:#2563eb;
 }
-textarea{min-height:120px;resize:vertical}
+
+textarea{
+min-height:120px;
+resize:vertical;
+}
 
 .actions{
 display:flex;
@@ -201,8 +259,19 @@ margin-top:12px;
 }
 
 .table-wrap{overflow:auto}
-table{width:100%;border-collapse:collapse;background:#fff}
-th,td{padding:10px;border:1px solid #cbd5e1;text-align:left}
+
+table{
+width:100%;
+border-collapse:collapse;
+background:#fff;
+}
+
+th,td{
+padding:10px;
+border:1px solid #cbd5e1;
+text-align:left;
+}
+
 th{background:#e2e8f0}
 
 .test-header{
@@ -219,6 +288,7 @@ top:75px;
 z-index:20;
 box-shadow:0 5px 18px rgba(0,0,0,.20);
 }
+
 .timer{
 background:#dc2626;
 padding:9px 15px;
@@ -234,7 +304,12 @@ border-radius:20px;
 overflow:hidden;
 margin:15px 0;
 }
-.progress-bar{height:100%;background:#2563eb;width:0}
+
+.progress-bar{
+height:100%;
+background:#2563eb;
+width:0;
+}
 
 .question-card{
 background:rgba(255,255,255,.98);
@@ -243,6 +318,7 @@ padding:25px;
 box-shadow:0 5px 22px rgba(15,23,42,.10);
 border-left:5px solid #2563eb;
 }
+
 .subject{
 display:inline-block;
 padding:6px 11px;
@@ -252,7 +328,12 @@ border-radius:20px;
 font-size:13px;
 font-weight:bold;
 }
-.question{font-size:20px;line-height:1.6;margin:20px 0}
+
+.question{
+font-size:20px;
+line-height:1.6;
+margin:20px 0;
+}
 
 .option{
 display:block;
@@ -265,12 +346,17 @@ font-weight:normal;
 background:#fff;
 transition:.2s;
 }
+
 .option:hover{
 background:#eff6ff;
 border-color:#60a5fa;
 transform:translateX(2px);
 }
-.option input{width:auto;margin-right:8px}
+
+.option input{
+width:auto;
+margin-right:8px;
+}
 
 .palette{
 display:grid;
@@ -278,7 +364,12 @@ grid-template-columns:repeat(auto-fill,minmax(42px,1fr));
 gap:7px;
 margin:15px 0;
 }
-.palette button{padding:9px 5px;background:#94a3b8}
+
+.palette button{
+padding:9px 5px;
+background:#94a3b8;
+}
+
 .palette button.answered{background:#16a34a}
 .palette button.current{outline:3px solid #f59e0b}
 
@@ -287,17 +378,20 @@ display:grid;
 grid-template-columns:repeat(auto-fit,minmax(130px,1fr));
 gap:14px;
 }
+
 .result{
 background:#eff6ff;
 padding:18px;
 border-radius:10px;
 text-align:center;
 }
+
 .result strong{
 display:block;
 font-size:27px;
 color:#1d4ed8;
 }
+
 .review{
 padding:18px;
 background:#fff;
@@ -305,6 +399,7 @@ border-radius:10px;
 margin:12px 0;
 border-left:5px solid #64748b;
 }
+
 .review.correct{border-left-color:#16a34a}
 .review.wrong{border-left-color:#dc2626}
 .review.skip{border-left-color:#d97706}
@@ -317,12 +412,14 @@ background:rgba(255,255,255,.97);
 margin-top:30px;
 box-shadow:0 -5px 20px rgba(0,0,0,.06);
 }
+
 .footer-title{
 font-size:18px;
 font-weight:bold;
 color:#172033;
 margin-bottom:12px;
 }
+
 .footer-links{
 display:flex;
 justify-content:center;
@@ -331,30 +428,92 @@ gap:8px;
 margin:15px auto;
 max-width:1100px;
 }
+
 .footer-links button{
 background:transparent;
 color:#2563eb;
 padding:7px 9px;
 font-weight:600;
 }
+
 .footer-links button:hover{background:#eff6ff}
-.footer-copy{font-size:13px;margin-top:15px}
 
-.policy-card{max-width:1000px;margin:0 auto}
-.policy-card h1{font-size:30px;margin-top:0;color:#172554}
-.policy-card h2{margin-top:28px;color:#1e3a8a}
+.footer-copy{
+font-size:13px;
+margin-top:15px;
+}
+
+.policy-card{
+max-width:1000px;
+margin:0 auto;
+}
+
+.policy-card h1{
+font-size:30px;
+margin-top:0;
+color:#172554;
+}
+
+.policy-card h2{
+margin-top:28px;
+color:#1e3a8a;
+}
+
 .policy-card h3{color:#334155}
-.policy-card p,.policy-card li{line-height:1.75;color:#475569}
-.policy-card ul{padding-left:25px}
-.policy-date{font-size:13px;color:#64748b;margin-bottom:25px}
-.policy-nav{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:20px}
-.policy-nav button{background:#e2e8f0;color:#172033}
-.policy-nav button.active{background:#2563eb;color:#fff}
 
-.login-card{max-width:450px;margin:50px auto;text-align:center}
-.login-icon{font-size:55px;margin-bottom:10px}
-.login-card h2{margin-top:5px;color:#172554}
-.login-error{color:#dc2626;font-weight:bold;margin-top:12px;min-height:20px}
+.policy-card p,.policy-card li{
+line-height:1.75;
+color:#475569;
+}
+
+.policy-card ul{padding-left:25px}
+
+.policy-date{
+font-size:13px;
+color:#64748b;
+margin-bottom:25px;
+}
+
+.policy-nav{
+display:flex;
+gap:7px;
+flex-wrap:wrap;
+margin-bottom:20px;
+}
+
+.policy-nav button{
+background:#e2e8f0;
+color:#172033;
+}
+
+.policy-nav button.active{
+background:#2563eb;
+color:#fff;
+}
+
+.login-card{
+max-width:450px;
+margin:50px auto;
+text-align:center;
+}
+
+.login-icon{
+font-size:55px;
+margin-bottom:10px;
+}
+
+.login-card h2{
+margin-top:5px;
+color:#172554;
+}
+
+.login-error{
+color:#dc2626;
+font-weight:bold;
+margin-top:12px;
+min-height:20px;
+}
+
 .admin-top{
 display:flex;
 justify-content:space-between;
@@ -371,13 +530,19 @@ gap:10px;
 flex-wrap:wrap;
 margin-top:18px;
 }
-.test-navigation,.test-exit{display:flex;gap:8px;flex-wrap:wrap}
+
+.test-navigation,.test-exit{
+display:flex;
+gap:8px;
+flex-wrap:wrap;
+}
 
 .policy-admin-grid{
 display:grid;
 grid-template-columns:250px 1fr;
 gap:18px;
 }
+
 .policy-menu{
 background:#f8fafc;
 border:1px solid #e2e8f0;
@@ -385,6 +550,7 @@ border-radius:10px;
 padding:10px;
 height:max-content;
 }
+
 .policy-menu button{
 width:100%;
 text-align:left;
@@ -393,12 +559,18 @@ background:#fff;
 color:#172033;
 border:1px solid #e2e8f0;
 }
-.policy-menu button.active{background:#2563eb;color:#fff}
+
+.policy-menu button.active{
+background:#2563eb;
+color:#fff;
+}
+
 .policy-editor textarea{
 min-height:400px;
 font-family:Arial,sans-serif;
 line-height:1.6;
 }
+
 .notice{
 padding:13px 15px;
 border-radius:8px;
@@ -408,21 +580,70 @@ margin:15px 0;
 color:#334155;
 }
 
+.status-online{
+display:inline-block;
+padding:5px 10px;
+border-radius:20px;
+background:#dcfce7;
+color:#15803d;
+font-size:12px;
+font-weight:bold;
+}
+
+.status-offline{
+display:inline-block;
+padding:5px 10px;
+border-radius:20px;
+background:#fee2e2;
+color:#b91c1c;
+font-size:12px;
+font-weight:bold;
+}
+
 @media(max-width:700px){
-.policy-admin-grid{grid-template-columns:1fr}
-.policy-menu{display:grid;grid-template-columns:repeat(2,1fr);gap:6px}
+
+.policy-admin-grid{
+grid-template-columns:1fr;
+}
+
+.policy-menu{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:6px;
+}
+
 .policy-menu button{margin:0}
+
 }
 
 @media(max-width:600px){
+
 .hero h1{font-size:28px}
+
 .question{font-size:17px}
-.test-header{position:static}
-.test-controls{flex-direction:column;align-items:stretch}
-.test-navigation,.test-exit{width:100%;justify-content:stretch}
-.test-navigation button,.test-exit button{flex:1}
+
+.test-header{
+position:static;
+}
+
+.test-controls{
+flex-direction:column;
+align-items:stretch;
+}
+
+.test-navigation,.test-exit{
+width:100%;
+justify-content:stretch;
+}
+
+.test-navigation button,.test-exit button{
+flex:1;
+}
+
 .footer-links{gap:3px}
+
 .policy-card h1{font-size:25px}
+
 }
 </style>
 </head>
@@ -430,12 +651,14 @@ color:#334155;
 <body>
 
 <header>
+
 <div class="logo">📚 AspirantTest.in</div>
 
 <nav>
 <button onclick="page('home')">Home</button>
 <button onclick="page('admin')">Admin</button>
 </nav>
+
 </header>
 
 <div class="container">
@@ -445,29 +668,50 @@ color:#334155;
 <section id="home">
 
 <div class="hero">
+
 <h1>All Competitive Exams</h1>
-<p>SSC • Banking • Railway • Police • State Exams • Teaching • Defence • Other</p>
+
+<p>
+SSC • Banking • Railway • Police • State Exams • Teaching • Defence • Other
+</p>
+
 </div>
 
+
 <div class="card" id="groupSection">
+
 <h2>📁 Select Exam Folder</h2>
+
 <div id="groupList" class="grid"></div>
+
 </div>
+
 
 <div class="card hidden" id="examSection">
 
 <div class="actions">
-<button onclick="showGroups()">⬅️ Back to Folders</button>
+
+<button onclick="showGroups()">
+⬅️ Back to Folders
+</button>
+
 </div>
 
-<h2 id="selectedGroupTitle">Select Exam</h2>
+<h2 id="selectedGroupTitle">
+Select Exam
+</h2>
+
 <div id="examList" class="grid"></div>
 
 </div>
 
+
 <div id="testArea" class="card hidden">
+
 <h2 id="testAreaTitle"></h2>
+
 <div id="publicTestList" class="grid"></div>
+
 </div>
 
 </section>
@@ -486,17 +730,36 @@ color:#334155;
 <p>Admin Dashboard access करने के लिए login करें।</p>
 
 <div class="form-group">
+
 <label>Username</label>
-<input id="adminUsername" type="text" placeholder="Enter Admin Username">
+
+<input
+id="adminUsername"
+type="text"
+placeholder="Enter Admin Username">
+
 </div>
 
 <div class="form-group">
+
 <label>Password</label>
-<input id="adminPassword" type="password" placeholder="Enter Admin Password"
+
+<input
+id="adminPassword"
+type="password"
+placeholder="Enter Admin Password"
 onkeydown="if(event.key==='Enter') adminLogin()">
+
 </div>
 
-<button class="green" style="width:100%;" onclick="adminLogin()">LOGIN</button>
+<button
+class="green"
+style="width:100%;"
+onclick="adminLogin()">
+
+LOGIN
+
+</button>
 
 <p id="loginMessage" class="login-error"></p>
 
@@ -510,27 +773,58 @@ onkeydown="if(event.key==='Enter') adminLogin()">
 <div class="admin-top">
 
 <div>
+
 <h2>Admin Dashboard</h2>
-<p>Exam, Test और Website Policies manage करें।</p>
+
+<p>
+Exam, Test और Website Policies manage करें।
+</p>
+
+<span id="databaseStatus" class="status-offline">
+Connecting...
+</span>
+
 </div>
 
-<button class="red" onclick="adminLogout()">Logout</button>
+<button class="red" onclick="adminLogout()">
+Logout
+</button>
 
 </div>
 
 <div class="actions">
 
-<button onclick="adminTab('add')">Add Test</button>
-
-<button onclick="adminTab('manage')">Manage Tests</button>
-
-<button onclick="adminTab('policies')" class="purple">
-Website Policies
+<button onclick="adminTab('add')">
+Add Test
 </button>
 
-<button class="gray" onclick="backupData()">Backup</button>
+<button onclick="adminTab('manage')">
+Manage Tests
+</button>
 
-<button class="red" onclick="resetData()">Reset Data</button>
+<button
+onclick="adminTab('policies')"
+class="purple">
+
+Website Policies
+
+</button>
+
+<button
+class="gray"
+onclick="backupData()">
+
+Backup
+
+</button>
+
+<button
+class="red"
+onclick="resetData()">
+
+Reset Data
+
+</button>
 
 </div>
 
@@ -543,49 +837,99 @@ Website Policies
 
 <h2>Add / Update Test</h2>
 
+<div class="notice">
+
+<strong>Online Database:</strong>
+Test save करते ही यह Supabase database में online save होगा और website पर सभी devices में दिखाई देगा।
+
+</div>
+
 <div class="form-grid">
 
 <div class="form-group">
+
 <label>Exam</label>
 
 <select id="examSelect">
-<option value="">Select Exam</option>
+
+<option value="">
+Select Exam
+</option>
+
 </select>
 
 </div>
 
+
 <div class="form-group">
+
 <label>Test Sequence</label>
-<input id="sequenceInput" type="number" min="1" value="1">
+
+<input
+id="sequenceInput"
+type="number"
+min="1"
+value="1">
+
 </div>
 
+
 <div class="form-group">
+
 <label>Test Name</label>
-<input id="titleInput" placeholder="Mock Test 1">
+
+<input
+id="titleInput"
+placeholder="Mock Test 1">
+
 </div>
 
+
 <div class="form-group">
+
 <label>Duration Minutes</label>
-<input id="durationInput" type="number" value="60">
+
+<input
+id="durationInput"
+type="number"
+value="60">
+
 </div>
 
+
 <div class="form-group">
+
 <label>Marks Per Question</label>
-<input id="marksInput" type="number" value="2">
+
+<input
+id="marksInput"
+type="number"
+value="2">
+
 </div>
+
 
 <div class="form-group">
+
 <label>Negative Marks</label>
-<input id="negativeInput" type="number" step="0.25" value="0.5">
+
+<input
+id="negativeInput"
+type="number"
+step="0.25"
+value="0.5">
+
 </div>
 
 </div>
+
 
 <div class="form-group">
 
 <label>Questions JSON</label>
 
-<textarea id="questionsInput"
+<textarea
+id="questionsInput"
 placeholder='[
 {
 "section":"Reasoning",
@@ -600,11 +944,25 @@ placeholder='[
 
 </div>
 
+
 <div class="actions">
 
-<button class="green" onclick="saveTest()">Save Test</button>
+<button
+id="saveTestButton"
+class="green"
+onclick="saveTest()">
 
-<button class="gray" onclick="clearForm()">Clear</button>
+Save Test
+
+</button>
+
+<button
+class="gray"
+onclick="clearForm()">
+
+Clear
+
+</button>
 
 </div>
 
@@ -631,7 +989,9 @@ placeholder='[
 <h2>Website Policies & Information</h2>
 
 <div class="notice">
+
 यहाँ से website की policy/information pages का content edit करके Save कर सकते हैं।
+
 </div>
 
 <div class="policy-admin-grid">
@@ -641,21 +1001,37 @@ placeholder='[
 <div class="policy-editor">
 
 <div class="form-group">
+
 <label>Page Title</label>
+
 <input id="policyTitleInput">
+
 </div>
 
 <div class="form-group">
+
 <label>Page Content</label>
+
 <textarea id="policyContentInput"></textarea>
+
 </div>
 
 <div class="actions">
 
-<button class="green" onclick="savePolicy()">Save Policy</button>
+<button
+class="green"
+onclick="savePolicy()">
 
-<button class="gray" onclick="resetCurrentPolicy()">
+Save Policy
+
+</button>
+
+<button
+class="gray"
+onclick="resetCurrentPolicy()">
+
 Restore Default
+
 </button>
 
 </div>
@@ -680,49 +1056,85 @@ Restore Default
 <div class="test-header">
 
 <div>
+
 <strong id="runningTitle"></strong>
+
 <br>
+
 <small id="runningInfo"></small>
-</div>
-
-<div id="timer" class="timer">00:00</div>
 
 </div>
+
+<div id="timer" class="timer">
+00:00
+</div>
+
+</div>
+
 
 <div class="progress">
-<div id="progressBar" class="progress-bar"></div>
+
+<div
+id="progressBar"
+class="progress-bar">
 </div>
+
+</div>
+
 
 <div id="palette" class="palette"></div>
 
 <div id="questionArea"></div>
 
+
 <div class="test-controls">
 
 <div class="test-exit">
 
-<button class="dark" onclick="backToTests()">
+<button
+class="dark"
+onclick="backToTests()">
+
 ← Back to Tests
+
 </button>
 
-<button class="orange" onclick="exitTest()">
+<button
+class="orange"
+onclick="exitTest()">
+
 🚪 Exit Test
+
 </button>
 
 </div>
 
+
 <div class="test-navigation">
 
-<button id="prevBtn" class="gray" onclick="previousQuestion()">
+<button
+id="prevBtn"
+class="gray"
+onclick="previousQuestion()">
+
 Previous
+
 </button>
 
-<button id="nextBtn" onclick="nextQuestion()">
+<button
+id="nextBtn"
+onclick="nextQuestion()">
+
 Next
+
 </button>
 
-<button class="red" onclick="submitTest()">
+<button
+class="red"
+onclick="submitTest()">
+
 Submit Test
+
 </button>
 
 </div>
@@ -766,14 +1178,19 @@ Submit Test
 <h1 id="policyPageTitle"></h1>
 
 <div class="policy-date">
-Last Updated: <span id="policyUpdated"></span>
+
+Last Updated:
+<span id="policyUpdated"></span>
+
 </div>
 
 <div id="policyPageContent"></div>
 
 <br>
 
-<button onclick="page('home')">← Back To Home</button>
+<button onclick="page('home')">
+← Back To Home
+</button>
 
 </div>
 
@@ -790,21 +1207,54 @@ Last Updated: <span id="policyUpdated"></span>
 
 <div class="footer-links">
 
-<button onclick="openPolicy('privacy')">Privacy Policy</button>
-<button onclick="openPolicy('terms')">Terms & Conditions</button>
-<button onclick="openPolicy('disclaimer')">Disclaimer</button>
-<button onclick="openPolicy('about')">About Us</button>
-<button onclick="openPolicy('cookies')">Cookie Policy</button>
-<button onclick="openPolicy('userAgreement')">User Agreement</button>
-<button onclick="openPolicy('copyright')">Copyright / DMCA</button>
-<button onclick="openPolicy('security')">Data & Security</button>
-<button onclick="openPolicy('accessibility')">Accessibility</button>
-<button onclick="openPolicy('grievance')">Grievance</button>
+<button onclick="openPolicy('privacy')">
+Privacy Policy
+</button>
+
+<button onclick="openPolicy('terms')">
+Terms & Conditions
+</button>
+
+<button onclick="openPolicy('disclaimer')">
+Disclaimer
+</button>
+
+<button onclick="openPolicy('about')">
+About Us
+</button>
+
+<button onclick="openPolicy('cookies')">
+Cookie Policy
+</button>
+
+<button onclick="openPolicy('userAgreement')">
+User Agreement
+</button>
+
+<button onclick="openPolicy('copyright')">
+Copyright / DMCA
+</button>
+
+<button onclick="openPolicy('security')">
+Data & Security
+</button>
+
+<button onclick="openPolicy('accessibility')">
+Accessibility
+</button>
+
+<button onclick="openPolicy('grievance')">
+Grievance
+</button>
 
 </div>
 
 <div class="footer-copy">
-© <span id="footerYear"></span> AspirantTest.in. All Rights Reserved.
+
+©
+<span id="footerYear"></span>
+AspirantTest.in. All Rights Reserved.
+
 </div>
 
 </footer>
@@ -820,6 +1270,19 @@ const ADMIN_USERNAME="patelji9091";
 const ADMIN_PASSWORD="patel@2006";
 
 let adminLoggedIn=false;
+
+
+/* =====================================================
+   SUPABASE
+===================================================== */
+
+const SUPABASE_URL=
+"https://xlvrlltnrgvesipyfuib.supabase.co";
+
+const SUPABASE_KEY=
+"sb_publishable_b1ixMzzmCoucBaUKjgK6WA_p3hEUR9L";
+
+let supabaseClient=null;
 
 
 /* =====================================================
@@ -885,23 +1348,68 @@ const EXAMS=[
 
 const EXAM_GROUPS=[
 
-{id:"ssc",name:"SSC",icon:"📚",description:"SSC के सभी Exams और Mock Tests"},
+{
+id:"ssc",
+name:"SSC",
+icon:"📚",
+description:"SSC के सभी Exams और Mock Tests"
+},
 
-{id:"banking",name:"Banking",icon:"🏦",description:"Banking और Finance Exams"},
+{
+id:"banking",
+name:"Banking",
+icon:"🏦",
+description:"Banking और Finance Exams"
+},
 
-{id:"railway",name:"Railway",icon:"🚆",description:"RRB और Railway Exams"},
+{
+id:"railway",
+name:"Railway",
+icon:"🚆",
+description:"RRB और Railway Exams"
+},
 
-{id:"police",name:"Police",icon:"👮",description:"Police और सुरक्षा भर्ती Exams"},
+{
+id:"police",
+name:"Police",
+icon:"👮",
+description:"Police और सुरक्षा भर्ती Exams"
+},
 
-{id:"defence",name:"Defence",icon:"🎖️",description:"Defence और Armed Forces Exams"},
+{
+id:"defence",
+name:"Defence",
+icon:"🎖️",
+description:"Defence और Armed Forces Exams"
+},
 
-{id:"teaching",name:"Teaching",icon:"👨‍🏫",description:"Teaching और Teacher Eligibility Exams"},
+{
+id:"teaching",
+name:"Teaching",
+icon:"👨‍🏫",
+description:"Teaching और Teacher Eligibility Exams"
+},
 
-{id:"government",name:"Agniveer & Army",icon:"🏛️",description:"Government भर्ती और अन्य Exams"},
+{
+id:"government",
+name:"Agniveer & Army",
+icon:"🏛️",
+description:"Government भर्ती और अन्य Exams"
+},
 
-{id:"insurance",name:"Insurance & Finance",icon:"💼",description:"LIC, ESIC, EPFO और Finance Exams"},
+{
+id:"insurance",
+name:"Insurance & Finance",
+icon:"💼",
+description:"LIC, ESIC, EPFO और Finance Exams"
+},
 
-{id:"other",name:"Other Competitive Exams",icon:"🎯",description:"अन्य Competitive Exams"}
+{
+id:"other",
+name:"Other Competitive Exams",
+icon:"🎯",
+description:"अन्य Competitive Exams"
+}
 
 ];
 
@@ -910,7 +1418,8 @@ function getExamGroup(exam){
 
 const id=String(exam.id||"");
 
-if(id.startsWith("ssc-"))return"ssc";
+if(id.startsWith("ssc-"))
+return"ssc";
 
 if([
 "ibps-po",
@@ -920,9 +1429,13 @@ if([
 "sbi-clerk",
 "rbi-grade-b",
 "rbi-assistant"
-].includes(id))return"banking";
+].includes(id))
+return"banking";
 
-if(id.startsWith("rrb-")||id.startsWith("rpf-"))
+if(
+id.startsWith("rrb-")||
+id.startsWith("rpf-")
+)
 return"railway";
 
 if(id.endsWith("-police"))
@@ -960,16 +1473,10 @@ return"other";
 
 
 /* =====================================================
-   LOCAL TEST CACHE
+   TEST CACHE
 ===================================================== */
 
-let tests=
-JSON.parse(
-localStorage.getItem("competitiveTests")
-)||[];
-
-if(!Array.isArray(tests))
-tests=[];
+let tests=[];
 
 
 /* =====================================================
@@ -1163,7 +1670,6 @@ JSON.parse(
 localStorage.getItem("websitePolicies")
 )||{};
 
-
 function initializePolicies(){
 
 Object.keys(DEFAULT_POLICIES).forEach(key=>{
@@ -1205,16 +1711,199 @@ let submitted=false;
 
 
 /* =====================================================
+   SUPABASE CONNECT
+===================================================== */
+
+async function connectSupabase(){
+
+try{
+
+if(!window.supabase){
+
+throw new Error(
+"Supabase library load नहीं हुई।"
+);
+
+}
+
+supabaseClient=
+window.supabase.createClient(
+SUPABASE_URL,
+SUPABASE_KEY
+);
+
+window.supabaseClient=
+supabaseClient;
+
+await loadOnlineTests();
+
+setDatabaseStatus(true);
+
+console.log(
+"✅ AspirantTest.in Supabase Connected"
+);
+
+}
+catch(error){
+
+console.error(
+"Supabase Connection Error:",
+error
+);
+
+setDatabaseStatus(false);
+
+}
+
+}
+
+
+/* =====================================================
+   DATABASE STATUS
+===================================================== */
+
+function setDatabaseStatus(online){
+
+const el=
+document.getElementById("databaseStatus");
+
+if(!el)return;
+
+if(online){
+
+el.className="status-online";
+
+el.innerText=
+"● Online Database Connected";
+
+}
+else{
+
+el.className="status-offline";
+
+el.innerText=
+"● Database Connection Error";
+
+}
+
+}
+
+
+/* =====================================================
+   LOAD ONLINE TESTS
+===================================================== */
+
+async function loadOnlineTests(){
+
+if(!supabaseClient){
+
+console.error(
+"Supabase client available नहीं है."
+);
+
+return false;
+
+}
+
+try{
+
+const {
+data,
+error
+}=await supabaseClient
+.from("tests")
+.select("*")
+.order("exam",{ascending:true})
+.order("sequence",{ascending:true});
+
+if(error){
+
+console.error(
+"Supabase Load Error:",
+error
+);
+
+setDatabaseStatus(false);
+
+return false;
+
+}
+
+
+tests=
+(data||[]).map(t=>({
+
+id:t.id,
+
+exam:t.exam,
+
+sequence:Number(t.sequence)||1,
+
+title:t.title||"",
+
+duration:Number(t.duration)||60,
+
+marks:Number(t.marks_per_question)||2,
+
+negative:Number(t.negative_marking)||0.5,
+
+questions:
+Array.isArray(t.questions)
+?t.questions
+:[]
+
+}));
+
+
+console.log(
+"✅ Online tests loaded:",
+tests.length
+);
+
+
+setDatabaseStatus(true);
+
+showGroups();
+
+loadExamSelect();
+
+if(adminLoggedIn)
+loadManage();
+
+return true;
+
+}
+catch(error){
+
+console.error(
+"Load Online Tests Error:",
+error
+);
+
+setDatabaseStatus(false);
+
+return false;
+
+}
+
+}
+
+
+/* =====================================================
    ADMIN LOGIN
 ===================================================== */
 
 function adminLogin(){
 
 const username=
-document.getElementById("adminUsername").value.trim();
+document
+.getElementById("adminUsername")
+.value.trim();
 
 const password=
-document.getElementById("adminPassword").value;
+document
+.getElementById("adminPassword")
+.value;
 
 if(
 username===ADMIN_USERNAME &&
@@ -1223,18 +1912,24 @@ password===ADMIN_PASSWORD
 
 adminLoggedIn=true;
 
-document.getElementById("adminLogin")
+document
+.getElementById("adminLogin")
 .classList.add("hidden");
 
-document.getElementById("adminDashboard")
+document
+.getElementById("adminDashboard")
 .classList.remove("hidden");
 
-document.getElementById("loginMessage")
+document
+.getElementById("loginMessage")
 .innerText="";
 
 loadExamSelect();
+
 loadManage();
+
 loadPolicyMenu();
+
 adminTab("add");
 
 }
@@ -1242,10 +1937,14 @@ else{
 
 adminLoggedIn=false;
 
-document.getElementById("loginMessage")
-.innerText="❌ गलत Username या Password";
+document
+.getElementById("loginMessage")
+.innerText=
+"❌ गलत Username या Password";
 
-document.getElementById("adminPassword").value="";
+document
+.getElementById("adminPassword")
+.value="";
 
 }
 
@@ -1256,15 +1955,25 @@ function adminLogout(){
 
 adminLoggedIn=false;
 
-document.getElementById("adminDashboard")
+document
+.getElementById("adminDashboard")
 .classList.add("hidden");
 
-document.getElementById("adminLogin")
+document
+.getElementById("adminLogin")
 .classList.remove("hidden");
 
-document.getElementById("adminUsername").value="";
-document.getElementById("adminPassword").value="";
-document.getElementById("loginMessage").innerText="";
+document
+.getElementById("adminUsername")
+.value="";
+
+document
+.getElementById("adminPassword")
+.value="";
+
+document
+.getElementById("loginMessage")
+.innerText="";
 
 page("home");
 
@@ -1277,33 +1986,45 @@ page("home");
 
 function page(name){
 
-document.querySelectorAll(
+document
+.querySelectorAll(
 "#home,#admin,#testPage,#resultPage,#policyPage"
-).forEach(x=>x.classList.add("hidden"));
+)
+.forEach(x=>
+x.classList.add("hidden")
+);
 
 if(name==="admin"){
 
-document.getElementById("admin").classList.remove("hidden");
+document
+.getElementById("admin")
+.classList.remove("hidden");
 
 if(adminLoggedIn){
 
-document.getElementById("adminLogin")
+document
+.getElementById("adminLogin")
 .classList.add("hidden");
 
-document.getElementById("adminDashboard")
+document
+.getElementById("adminDashboard")
 .classList.remove("hidden");
 
 loadExamSelect();
+
 loadManage();
+
 loadPolicyMenu();
 
 }
 else{
 
-document.getElementById("adminDashboard")
+document
+.getElementById("adminDashboard")
 .classList.add("hidden");
 
-document.getElementById("adminLogin")
+document
+.getElementById("adminLogin")
 .classList.remove("hidden");
 
 }
@@ -1312,7 +2033,9 @@ return;
 
 }
 
-document.getElementById(name).classList.remove("hidden");
+document
+.getElementById(name)
+.classList.remove("hidden");
 
 if(name==="home")
 showGroups();
@@ -1326,17 +2049,21 @@ showGroups();
 
 function loadExams(groupId){
 
-const box=document.getElementById("examList");
+const box=
+document.getElementById("examList");
 
 const examSection=
 document.getElementById("examSection");
 
 const group=
-EXAM_GROUPS.find(g=>g.id===groupId);
+EXAM_GROUPS.find(
+g=>g.id===groupId
+);
 
 if(!group)return;
 
-document.getElementById("selectedGroupTitle")
+document
+.getElementById("selectedGroupTitle")
 .innerText=
 `${group.icon} ${group.name} – Exams`;
 
@@ -1357,12 +2084,18 @@ return`
 
 <div class="exam-card">
 
-<div style="font-size:35px">${exam.icon}</div>
+<div style="font-size:35px">
+${exam.icon}
+</div>
 
-<h3>${exam.name}</h3>
+<h3>${escape(exam.name)}</h3>
 
 <div class="info">
-<span>📝 ${count} Tests Available</span>
+
+<span>
+📝 ${count} Tests Available
+</span>
+
 </div>
 
 <button onclick="selectExam('${exam.id}')">
@@ -1377,7 +2110,8 @@ View Tests
 
 examSection.classList.remove("hidden");
 
-document.getElementById("groupSection")
+document
+.getElementById("groupSection")
 .classList.add("hidden");
 
 window.scrollTo({
@@ -1415,7 +2149,8 @@ t=>t.exam===exam.name
 
 return`
 
-<div class="exam-card folder-card"
+<div
+class="exam-card folder-card"
 onclick="loadExams('${group.id}')"
 style="cursor:pointer">
 
@@ -1427,16 +2162,23 @@ ${group.icon}
 ${groupExams.length} Exams
 </span>
 
-<h3>${group.name}</h3>
+<h3>${escape(group.name)}</h3>
 
-<p>${group.description}</p>
+<p>${escape(group.description)}</p>
 
 <div class="info">
-<span>📁 ${count} Tests Available</span>
+
+<span>
+📁 ${count} Tests Available
+</span>
+
 </div>
 
-<button onclick="event.stopPropagation();loadExams('${group.id}')">
+<button
+onclick="event.stopPropagation();loadExams('${group.id}')">
+
 View Tests →
+
 </button>
 
 </div>
@@ -1480,13 +2222,17 @@ loadGroups();
 function selectExam(examId){
 
 const exam=
-EXAMS.find(x=>x.id===examId);
+EXAMS.find(
+x=>x.id===examId
+);
 
 if(!exam)return;
 
 const list=
 tests
-.filter(t=>t.exam===exam.name)
+.filter(
+t=>t.exam===exam.name
+)
 .sort(
 (a,b)=>
 (Number(a.sequence)||999999)-
@@ -1498,7 +2244,8 @@ document.getElementById("testArea");
 
 area.classList.remove("hidden");
 
-document.getElementById("testAreaTitle")
+document
+.getElementById("testAreaTitle")
 .innerText=
 `${exam.name} – Mock Tests`;
 
@@ -1508,10 +2255,17 @@ document.getElementById("publicTestList");
 if(!list.length){
 
 box.innerHTML=`
+
 <div class="card">
+
 <h3>No Tests Available</h3>
-<p>इस exam के लिए अभी कोई test upload नहीं किया गया है।</p>
+
+<p>
+इस exam के लिए अभी कोई test upload नहीं किया गया है।
+</p>
+
 </div>
+
 `;
 
 }
@@ -1552,9 +2306,12 @@ TEST ${Number(test.sequence)||1}
 
 </div>
 
-<button class="green"
+<button
+class="green"
 onclick="startTest(${test.id})">
+
 START TEST
+
 </button>
 
 </div>
@@ -1572,7 +2329,7 @@ behavior:"smooth"
 
 
 /* =====================================================
-   EXAM SELECT ADMIN
+   EXAM SELECT
 ===================================================== */
 
 function loadExamSelect(){
@@ -1582,13 +2339,19 @@ document.getElementById("examSelect");
 
 if(!select)return;
 
+const current=
+select.value;
+
 select.innerHTML=
 `<option value="">Select Exam</option>`+
 EXAMS.map(exam=>
-`<option value="${exam.name}">
-${exam.name}
+`<option value="${escape(exam.name)}">
+${escape(exam.name)}
 </option>`
 ).join("");
+
+if(current)
+select.value=current;
 
 }
 
@@ -1601,14 +2364,26 @@ function adminTab(tab){
 
 if(!adminLoggedIn)return;
 
-document.getElementById("adminAdd")
-.classList.toggle("hidden",tab!=="add");
+document
+.getElementById("adminAdd")
+.classList.toggle(
+"hidden",
+tab!=="add"
+);
 
-document.getElementById("adminManage")
-.classList.toggle("hidden",tab!=="manage");
+document
+.getElementById("adminManage")
+.classList.toggle(
+"hidden",
+tab!=="manage"
+);
 
-document.getElementById("adminPolicies")
-.classList.toggle("hidden",tab!=="policies");
+document
+.getElementById("adminPolicies")
+.classList.toggle(
+"hidden",
+tab!=="policies"
+);
 
 if(tab==="manage")
 loadManage();
@@ -1628,58 +2403,145 @@ function message(text,color){
 const el=
 document.getElementById("adminMessage");
 
+if(!el)return;
+
 el.innerText=text;
 
 el.style.color=
-color==="green"?"#16a34a":"#dc2626";
+color==="green"
+?"#16a34a"
+:"#dc2626";
 
 }
 
 
 /* =====================================================
-   SAVE TEST
-   SUPABASE ONLINE
+   VALIDATE QUESTIONS
+===================================================== */
+
+function validateQuestions(questions){
+
+if(!Array.isArray(questions)){
+
+return{
+valid:false,
+message:"❌ Questions एक array होना चाहिए।"
+};
+
+}
+
+if(!questions.length){
+
+return{
+valid:false,
+message:"❌ कम से कम 1 question होना चाहिए।"
+};
+
+}
+
+for(let i=0;i<questions.length;i++){
+
+const q=questions[i];
+
+if(
+!q ||
+!q.question ||
+!Array.isArray(q.options) ||
+q.options.length!==4 ||
+typeof q.answer!=="number" ||
+q.answer<0 ||
+q.answer>3
+){
+
+return{
+valid:false,
+message:
+`❌ Question ${i+1} का format गलत है।`
+};
+
+}
+
+q.id=i+1;
+
+}
+
+return{
+valid:true,
+message:""
+};
+
+}
+
+
+/* =====================================================
+   SAVE TEST - SUPABASE
 ===================================================== */
 
 async function saveTest(){
 
 if(!adminLoggedIn){
 
-alert("Please login as admin first.");
+alert(
+"Please login as admin first."
+);
 
 return;
 
 }
 
+if(!supabaseClient){
+
+message(
+"❌ Supabase connection ready नहीं है। Page refresh करके फिर कोशिश करें।",
+"red"
+);
+
+return;
+
+}
+
+
 const exam=
-document.getElementById("examSelect").value;
+document
+.getElementById("examSelect")
+.value;
 
 const sequence=
 Number(
-document.getElementById("sequenceInput").value
+document
+.getElementById("sequenceInput")
+.value
 );
 
 const title=
-document.getElementById("titleInput")
+document
+.getElementById("titleInput")
 .value.trim();
 
 const duration=
 Number(
-document.getElementById("durationInput").value
+document
+.getElementById("durationInput")
+.value
 );
 
 const marks=
 Number(
-document.getElementById("marksInput").value
+document
+.getElementById("marksInput")
+.value
 );
 
 const negative=
 Number(
-document.getElementById("negativeInput").value
+document
+.getElementById("negativeInput")
+.value
 );
 
 const json=
-document.getElementById("questionsInput")
+document
+.getElementById("questionsInput")
 .value.trim();
 
 
@@ -1692,7 +2554,55 @@ if(
 ){
 
 message(
-"सभी जरूरी fields भरें।",
+"❌ सभी जरूरी fields भरें।",
+"red"
+);
+
+return;
+
+}
+
+
+if(!Number.isFinite(sequence)||sequence<1){
+
+message(
+"❌ Sequence 1 या उससे अधिक होना चाहिए।",
+"red"
+);
+
+return;
+
+}
+
+
+if(!Number.isFinite(duration)||duration<1){
+
+message(
+"❌ Duration सही डालें।",
+"red"
+);
+
+return;
+
+}
+
+
+if(!Number.isFinite(marks)||marks<=0){
+
+message(
+"❌ Marks Per Question सही डालें।",
+"red"
+);
+
+return;
+
+}
+
+
+if(!Number.isFinite(negative)||negative<0){
+
+message(
+"❌ Negative Marks सही डालें।",
 "red"
 );
 
@@ -1705,13 +2615,16 @@ let questions;
 
 try{
 
-questions=JSON.parse(json);
+questions=
+JSON.parse(json);
 
 }
-catch(e){
+catch(error){
+
+console.error(error);
 
 message(
-"Questions JSON गलत है।",
+"❌ Questions JSON गलत है।",
 "red"
 );
 
@@ -1720,10 +2633,13 @@ return;
 }
 
 
-if(!Array.isArray(questions)){
+const validation=
+validateQuestions(questions);
+
+if(!validation.valid){
 
 message(
-"Questions एक array होना चाहिए।",
+validation.message,
 "red"
 );
 
@@ -1732,89 +2648,62 @@ return;
 }
 
 
-if(!questions.length){
+/* SAVE BUTTON */
 
-message(
-"कम से कम 1 question होना चाहिए।",
-"red"
+const saveButton=
+document.getElementById(
+"saveTestButton"
 );
 
-return;
+if(saveButton){
+
+saveButton.disabled=true;
+
+saveButton.innerText=
+"Saving...";
 
 }
 
 
-for(
-let i=0;
-i<questions.length;
-i++
-){
+try{
 
-const q=questions[i];
+/* CHECK SAME EXAM + SEQUENCE */
 
-if(
-!q.question ||
-!Array.isArray(q.options) ||
-q.options.length!==4 ||
-typeof q.answer!=="number" ||
-q.answer<0 ||
-q.answer>3
-){
-
-message(
-`Question ${i+1} का format गलत है।`,
-"red"
-);
-
-return;
-
-}
-
-q.id=i+1;
-
-}
-
-
-/* SUPABASE CHECK */
-
-if(!window.supabaseClient){
-
-message(
-"Supabase अभी connect नहीं हुआ। कुछ सेकंड बाद फिर कोशिश करें।",
-"red"
-);
-
-return;
-
-}
-
-const db=
-window.supabaseClient;
-
-
-/* SAME EXAM + SEQUENCE CHECK */
-
-const {data:existing,error:findError}=
-await db
+const {
+data:existingRows,
+error:findError
+}=
+await supabaseClient
 .from("tests")
-.select("*")
+.select("id,title")
 .eq("exam",exam)
 .eq("sequence",sequence)
-.maybeSingle();
+.limit(1);
 
 
 if(findError){
 
-console.error(findError);
+console.error(
+"Find Error:",
+findError
+);
 
 message(
-"Database error: "+findError.message,
+"❌ Database error: "+
+findError.message,
 "red"
 );
 
 return;
 
 }
+
+
+const existing=
+existingRows &&
+existingRows.length
+?existingRows[0]
+:null;
 
 
 /* UPDATE */
@@ -1823,31 +2712,44 @@ if(existing){
 
 const ok=
 confirm(
-"इस sequence का test पहले से है। Update करें?"
+"इस Exam का यह Test Sequence पहले से मौजूद है।\n\nक्या आप इसे UPDATE करना चाहते हैं?"
 );
 
-if(!ok)return;
+if(!ok)
+return;
 
-const {error}=
-await db
+
+const {
+error:updateError
+}=
+await supabaseClient
 .from("tests")
 .update({
 
 title:title,
+
 duration:duration,
+
 marks_per_question:marks,
+
 negative_marking:negative,
+
 questions:questions
 
 })
 .eq("id",existing.id);
 
-if(error){
 
-console.error(error);
+if(updateError){
+
+console.error(
+"Update Error:",
+updateError
+);
 
 message(
-"❌ Test update नहीं हुआ: "+error.message,
+"❌ Test update नहीं हुआ: "+
+updateError.message,
 "red"
 );
 
@@ -1856,7 +2758,7 @@ return;
 }
 
 message(
-"✅ Test successfully updated online.",
+"✅ Test successfully updated in Supabase.",
 "green"
 );
 
@@ -1867,27 +2769,40 @@ message(
 
 else{
 
-const {error}=
-await db
+const {
+error:insertError
+}=
+await supabaseClient
 .from("tests")
 .insert({
 
 title:title,
+
 exam:exam,
+
 sequence:sequence,
+
 duration:duration,
+
 marks_per_question:marks,
+
 negative_marking:negative,
+
 questions:questions
 
 });
 
-if(error){
 
-console.error(error);
+if(insertError){
+
+console.error(
+"Insert Error:",
+insertError
+);
 
 message(
-"❌ Test online save नहीं हुआ: "+error.message,
+"❌ Test Supabase में save नहीं हुआ: "+
+insertError.message,
 "red"
 );
 
@@ -1896,20 +2811,48 @@ return;
 }
 
 message(
-"✅ Test successfully saved online.",
+"✅ Test Supabase में successfully save हो गया.",
 "green"
 );
 
 }
 
 
-/* LOAD AGAIN */
+/* REFRESH DATA */
 
 await loadOnlineTests();
 
 clearForm();
 
 loadManage();
+
+}
+catch(error){
+
+console.error(
+"Save Test Error:",
+error
+);
+
+message(
+"❌ Error: "+
+error.message,
+"red"
+);
+
+}
+finally{
+
+if(saveButton){
+
+saveButton.disabled=false;
+
+saveButton.innerText=
+"Save Test";
+
+}
+
+}
 
 }
 
@@ -1920,13 +2863,35 @@ loadManage();
 
 function clearForm(){
 
-document.getElementById("examSelect").value="";
-document.getElementById("sequenceInput").value="1";
-document.getElementById("titleInput").value="";
-document.getElementById("durationInput").value="60";
-document.getElementById("marksInput").value="2";
-document.getElementById("negativeInput").value="0.5";
-document.getElementById("questionsInput").value="";
+document
+.getElementById("examSelect")
+.value="";
+
+document
+.getElementById("sequenceInput")
+.value="1";
+
+document
+.getElementById("titleInput")
+.value="";
+
+document
+.getElementById("durationInput")
+.value="60";
+
+document
+.getElementById("marksInput")
+.value="2";
+
+document
+.getElementById("negativeInput")
+.value="0.5";
+
+document
+.getElementById("questionsInput")
+.value="";
+
+message("","green");
 
 }
 
@@ -1942,23 +2907,35 @@ if(!adminLoggedIn)return;
 const box=
 document.getElementById("manageList");
 
+if(!box)return;
+
 if(!tests.length){
 
-box.innerHTML=
-"<p>No tests uploaded.</p>";
+box.innerHTML=`
+
+<div class="notice">
+अभी कोई test uploaded नहीं है।
+</div>
+
+`;
 
 return;
 
 }
 
+
 const sorted=
 [...tests].sort((a,b)=>{
 
 const ea=
-EXAMS.findIndex(x=>x.name===a.exam);
+EXAMS.findIndex(
+x=>x.name===a.exam
+);
 
 const eb=
-EXAMS.findIndex(x=>x.name===b.exam);
+EXAMS.findIndex(
+x=>x.name===b.exam
+);
 
 if(ea!==eb)
 return ea-eb;
@@ -1982,12 +2959,14 @@ box.innerHTML=`
 <thead>
 
 <tr>
+
 <th>Exam</th>
 <th>Sequence</th>
 <th>Test</th>
 <th>Type</th>
 <th>Questions</th>
 <th>Action</th>
+
 </tr>
 
 </thead>
@@ -1998,30 +2977,48 @@ ${sorted.map(test=>`
 
 <tr>
 
-<td>${escape(test.exam)}</td>
-
-<td>${Number(test.sequence)||1}</td>
-
-<td>${escape(test.title)}</td>
-
 <td>
-<span style="color:#16a34a;font-weight:bold">
-FREE
-</span>
+${escape(test.exam)}
 </td>
 
-<td>${test.questions.length}</td>
+<td>
+${Number(test.sequence)||1}
+</td>
+
+<td>
+${escape(test.title)}
+</td>
 
 <td>
 
-<button onclick="editTest(${test.id})">
+<span
+style="color:#16a34a;font-weight:bold">
+
+FREE
+
+</span>
+
+</td>
+
+<td>
+${test.questions.length}
+</td>
+
+<td>
+
+<button
+onclick="editTest(${test.id})">
+
 Edit
+
 </button>
 
 <button
 class="red"
 onclick="deleteTest(${test.id})">
+
 Delete
+
 </button>
 
 </td>
@@ -2042,7 +3039,7 @@ Delete
 
 
 /* =====================================================
-   EDIT
+   EDIT TEST
 ===================================================== */
 
 function editTest(id){
@@ -2050,29 +3047,38 @@ function editTest(id){
 if(!adminLoggedIn)return;
 
 const test=
-tests.find(t=>t.id===id);
+tests.find(
+t=>String(t.id)===String(id)
+);
 
 if(!test)return;
 
-document.getElementById("examSelect")
+document
+.getElementById("examSelect")
 .value=test.exam;
 
-document.getElementById("sequenceInput")
+document
+.getElementById("sequenceInput")
 .value=test.sequence;
 
-document.getElementById("titleInput")
+document
+.getElementById("titleInput")
 .value=test.title;
 
-document.getElementById("durationInput")
+document
+.getElementById("durationInput")
 .value=test.duration;
 
-document.getElementById("marksInput")
+document
+.getElementById("marksInput")
 .value=test.marks;
 
-document.getElementById("negativeInput")
+document
+.getElementById("negativeInput")
 .value=test.negative;
 
-document.getElementById("questionsInput")
+document
+.getElementById("questionsInput")
 .value=
 JSON.stringify(
 test.questions,
@@ -2091,19 +3097,21 @@ behavior:"smooth"
 
 
 /* =====================================================
-   DELETE TEST - SUPABASE
+   DELETE TEST
 ===================================================== */
 
 async function deleteTest(id){
 
 if(!adminLoggedIn)return;
 
-if(!confirm(
+if(
+!confirm(
 "क्या यह test delete करना है?"
-))
+)
+)
 return;
 
-if(!window.supabaseClient){
+if(!supabaseClient){
 
 alert(
 "Supabase connection ready नहीं है।"
@@ -2113,18 +3121,27 @@ return;
 
 }
 
-const {error}=
-await window.supabaseClient
+
+try{
+
+const {
+error
+}=
+await supabaseClient
 .from("tests")
 .delete()
 .eq("id",id);
 
+
 if(error){
 
-console.error(error);
+console.error(
+"Delete Error:",
+error
+);
 
 alert(
-"❌ Test delete नहीं हुआ: "+
+"❌ Test delete नहीं हुआ:\n"+
 error.message
 );
 
@@ -2132,27 +3149,48 @@ return;
 
 }
 
+
 await loadOnlineTests();
 
 loadManage();
+
+showGroups();
+
+alert(
+"✅ Test delete हो गया।"
+);
+
+}
+catch(error){
+
+console.error(error);
+
+alert(
+"❌ Error: "+
+error.message
+);
+
+}
 
 }
 
 
 /* =====================================================
-   RESET ALL TESTS - SUPABASE
+   RESET ALL TESTS
 ===================================================== */
 
 async function resetData(){
 
 if(!adminLoggedIn)return;
 
-if(!confirm(
-"सभी uploaded tests delete हो जाएंगे। Continue?"
-))
+if(
+!confirm(
+"सभी uploaded tests delete हो जाएंगे।\n\nContinue?"
+)
+)
 return;
 
-if(!window.supabaseClient){
+if(!supabaseClient){
 
 alert(
 "Supabase connection ready नहीं है।"
@@ -2162,24 +3200,34 @@ return;
 
 }
 
-const {error}=
-await window.supabaseClient
+
+try{
+
+const {
+error
+}=
+await supabaseClient
 .from("tests")
 .delete()
 .gte("id",0);
 
+
 if(error){
 
-console.error(error);
+console.error(
+"Reset Error:",
+error
+);
 
 alert(
-"❌ Tests reset नहीं हुए: "+
+"❌ Tests reset नहीं हुए:\n"+
 error.message
 );
 
 return;
 
 }
+
 
 tests=[];
 
@@ -2192,6 +3240,18 @@ alert(
 );
 
 }
+catch(error){
+
+console.error(error);
+
+alert(
+"❌ Error: "+
+error.message
+);
+
+}
+
+}
 
 
 /* =====================================================
@@ -2201,9 +3261,24 @@ alert(
 function startTest(id){
 
 const test=
-tests.find(t=>t.id===id);
+tests.find(
+t=>String(t.id)===String(id)
+);
 
 if(!test)return;
+
+if(
+!Array.isArray(test.questions)||
+!test.questions.length
+){
+
+alert(
+"इस test में questions उपलब्ध नहीं हैं।"
+);
+
+return;
+
+}
 
 currentTest=test;
 
@@ -2219,10 +3294,13 @@ submitted=false;
 timeLeft=
 Number(test.duration)*60;
 
-document.getElementById("runningTitle")
-.innerText=test.title;
+document
+.getElementById("runningTitle")
+.innerText=
+test.title;
 
-document.getElementById("runningInfo")
+document
+.getElementById("runningInfo")
 .innerText=
 `${test.exam} | Test ${Number(test.sequence)||1} | ${test.questions.length} Questions`;
 
@@ -2249,22 +3327,32 @@ currentTest.questions[currentQuestion];
 const total=
 currentTest.questions.length;
 
-document.getElementById("progressBar")
+document
+.getElementById("progressBar")
 .style.width=
 `${((currentQuestion+1)/total)*100}%`;
 
-document.getElementById("questionArea")
+document
+.getElementById("questionArea")
 .innerHTML=`
 
 <div class="question-card">
 
 <span class="subject">
-${escape(q.subject||q.section||"General")}
+
+${escape(
+q.subject||
+q.section||
+"General"
+)}
+
 </span>
 
 <div class="question">
 
-<strong>Q${currentQuestion+1}.</strong>
+<strong>
+Q${currentQuestion+1}.
+</strong>
 
 ${escape(q.question)}
 
@@ -2291,11 +3379,13 @@ ${escape(option)}
 
 `;
 
-document.getElementById("prevBtn")
+document
+.getElementById("prevBtn")
 .disabled=
 currentQuestion===0;
 
-document.getElementById("nextBtn")
+document
+.getElementById("nextBtn")
 .disabled=
 currentQuestion===total-1;
 
@@ -2316,10 +3406,20 @@ const box=
 document.getElementById("palette");
 
 box.innerHTML=
-currentTest.questions.map((q,index)=>`
+currentTest.questions.map(
+(q,index)=>`
 
 <button
-class="${answers[index]!==null?"answered":""} ${currentQuestion===index?"current":""}"
+class="${
+answers[index]!==null
+?"answered"
+:""
+}
+${
+currentQuestion===index
+?"current"
+:""
+}"
 onclick="goQuestion(${index})">
 
 ${index+1}
@@ -2404,9 +3504,11 @@ return;
 
 }
 
-if(!confirm(
+if(
+!confirm(
 "क्या आप test से वापस जाना चाहते हैं?\n\nआपका current progress save नहीं होगा।"
-))
+)
+)
 return;
 
 clearInterval(timer);
@@ -2414,9 +3516,13 @@ clearInterval(timer);
 timer=null;
 
 currentTest=null;
+
 currentQuestion=0;
+
 answers=[];
+
 timeLeft=0;
+
 submitted=false;
 
 page("home");
@@ -2434,9 +3540,11 @@ return;
 
 }
 
-if(!confirm(
+if(
+!confirm(
 "🚪 क्या आप test exit करना चाहते हैं?\n\nआपका current test progress और answers delete हो जाएंगे।"
-))
+)
+)
 return;
 
 clearInterval(timer);
@@ -2444,9 +3552,13 @@ clearInterval(timer);
 timer=null;
 
 currentTest=null;
+
 currentQuestion=0;
+
 answers=[];
+
 timeLeft=0;
+
 submitted=false;
 
 page("home");
@@ -2464,7 +3576,8 @@ clearInterval(timer);
 
 updateTimer();
 
-timer=setInterval(()=>{
+timer=
+setInterval(()=>{
 
 if(!currentTest){
 
@@ -2507,7 +3620,8 @@ Math.floor(timeLeft/60);
 const sec=
 timeLeft%60;
 
-document.getElementById("timer")
+document
+.getElementById("timer")
 .innerText=
 `${String(min).padStart(2,"0")}:${String(sec).padStart(2,"0")}`;
 
@@ -2522,9 +3636,11 @@ function submitTest(){
 
 if(!currentTest)return;
 
-if(!confirm(
+if(
+!confirm(
 "क्या आप test submit करना चाहते हैं?"
-))
+)
+)
 return;
 
 finishTest();
@@ -2555,10 +3671,14 @@ let score=0;
 
 const subject={};
 
-currentTest.questions.forEach((q,index)=>{
+
+currentTest.questions.forEach(
+(q,index)=>{
 
 const subjectName=
-q.subject||q.section||"General";
+q.subject||
+q.section||
+"General";
 
 if(!subject[subjectName]){
 
@@ -2573,7 +3693,8 @@ skip:0
 
 subject[subjectName].total++;
 
-const ans=answers[index];
+const ans=
+answers[index];
 
 if(ans===null){
 
@@ -2587,7 +3708,8 @@ else if(ans===q.answer){
 
 correct++;
 
-score+=Number(currentTest.marks);
+score+=
+Number(currentTest.marks);
 
 subject[subjectName].correct++;
 
@@ -2597,7 +3719,8 @@ else{
 
 wrong++;
 
-score-=Number(currentTest.negative);
+score-=
+Number(currentTest.negative);
 
 subject[subjectName].wrong++;
 
@@ -2605,25 +3728,30 @@ subject[subjectName].wrong++;
 
 });
 
+
 const total=
 currentTest.questions.length;
 
 const maxMarks=
-total*Number(currentTest.marks);
+total*
+Number(currentTest.marks);
 
 const percentage=
-Math.max(
+maxMarks>0
+?Math.max(
 0,
 (score/maxMarks)*100
-);
+)
+:0;
 
 const attempted=
 correct+wrong;
 
 const accuracy=
-attempted?
-(correct/attempted)*100:
-0;
+attempted
+?(correct/attempted)*100
+:0;
+
 
 showResult({
 
@@ -2650,77 +3778,130 @@ function showResult(data){
 
 page("resultPage");
 
-document.getElementById("resultSummary")
+document
+.getElementById("resultSummary")
 .innerHTML=`
 
-<h3>${escape(currentTest.title)}</h3>
+<h3>
+${escape(currentTest.title)}
+</h3>
 
 <div class="result-grid">
 
 <div class="result">
-<strong>${data.score.toFixed(2)}</strong>
+
+<strong>
+${data.score.toFixed(2)}
+</strong>
+
 Score
+
 </div>
 
 <div class="result">
-<strong>${data.maxMarks}</strong>
+
+<strong>
+${data.maxMarks}
+</strong>
+
 Maximum
+
 </div>
 
 <div class="result">
-<strong>${data.correct}</strong>
+
+<strong>
+${data.correct}
+</strong>
+
 Correct
+
 </div>
 
 <div class="result">
-<strong>${data.wrong}</strong>
+
+<strong>
+${data.wrong}
+</strong>
+
 Wrong
+
 </div>
 
 <div class="result">
-<strong>${data.skipped}</strong>
+
+<strong>
+${data.skipped}
+</strong>
+
 Skipped
+
 </div>
 
 <div class="result">
-<strong>${data.percentage.toFixed(2)}%</strong>
+
+<strong>
+${data.percentage.toFixed(2)}%
+</strong>
+
 Percentage
+
 </div>
 
 <div class="result">
-<strong>${data.accuracy.toFixed(2)}%</strong>
+
+<strong>
+${data.accuracy.toFixed(2)}%
+</strong>
+
 Accuracy
+
 </div>
 
 <div class="result">
-<strong>${data.attempted}</strong>
+
+<strong>
+${data.attempted}
+</strong>
+
 Attempted
-</div>
 
 </div>
 
-<h3>Subject Performance</h3>
+</div>
+
+
+<h3>
+Subject Performance
+</h3>
 
 <div class="table-wrap">
 
 <table>
 
 <tr>
+
 <th>Subject</th>
 <th>Total</th>
 <th>Correct</th>
 <th>Wrong</th>
 <th>Skipped</th>
+
 </tr>
 
-${Object.entries(data.subject).map(([name,s])=>`
+${Object.entries(data.subject)
+.map(([name,s])=>`
 
 <tr>
 
 <td>${escape(name)}</td>
+
 <td>${s.total}</td>
+
 <td>${s.correct}</td>
+
 <td>${s.wrong}</td>
+
 <td>${s.skip}</td>
 
 </tr>
@@ -2740,14 +3921,18 @@ Back To Tests
 `;
 
 
-document.getElementById("solutions")
+document
+.getElementById("solutions")
 .innerHTML=
 
-currentTest.questions.map((q,index)=>{
+currentTest.questions.map(
+(q,index)=>{
 
-const ans=answers[index];
+const ans=
+answers[index];
 
 let cls="skip";
+
 let status="Skipped";
 
 if(
@@ -2756,12 +3941,14 @@ ans===q.answer
 ){
 
 cls="correct";
+
 status="Correct";
 
 }
 else if(ans!==null){
 
 cls="wrong";
+
 status="Wrong";
 
 }
@@ -2775,29 +3962,41 @@ Q${index+1}. ${escape(q.question)}
 </h3>
 
 <p>
-<strong>Status:</strong> ${status}
+
+<strong>Status:</strong>
+${status}
+
 </p>
 
 <p>
+
 <strong>Your Answer:</strong>
+
 ${
 ans===null
 ?"Not Attempted"
 :escape(q.options[ans])
 }
+
 </p>
 
 <p>
+
 <strong>Correct Answer:</strong>
+
 ${escape(q.options[q.answer])}
+
 </p>
 
 <p>
+
 <strong>Explanation:</strong>
+
 ${escape(
 q.explanation||
 "Explanation not available."
 )}
+
 </p>
 
 </div>
@@ -2817,16 +4016,31 @@ async function backupData(){
 
 if(!adminLoggedIn)return;
 
+await loadOnlineTests();
+
 const backup={
+
 tests:tests,
+
 policies:policies,
-backupDate:new Date().toISOString()
+
+backupDate:
+new Date().toISOString()
+
 };
 
 const blob=
 new Blob(
-[JSON.stringify(backup,null,2)],
-{type:"application/json"}
+[
+JSON.stringify(
+backup,
+null,
+2
+)
+],
+{
+type:"application/json"
+}
 );
 
 const url=
@@ -2840,7 +4054,11 @@ a.href=url;
 a.download=
 "aspiranttest-full-backup.json";
 
+document.body.appendChild(a);
+
 a.click();
+
+a.remove();
 
 URL.revokeObjectURL(url);
 
@@ -2854,14 +4072,23 @@ URL.revokeObjectURL(url);
 const POLICY_NAMES={
 
 privacy:"Privacy Policy",
+
 terms:"Terms & Conditions",
+
 disclaimer:"Disclaimer",
+
 about:"About Us",
+
 cookies:"Cookie Policy",
+
 userAgreement:"User Agreement",
+
 copyright:"Copyright / DMCA",
+
 security:"Data & Security",
+
 accessibility:"Accessibility",
+
 grievance:"Grievance / Complaints"
 
 };
@@ -2876,17 +4103,24 @@ document.getElementById("policyMenu");
 
 menu.innerHTML=
 Object.entries(POLICY_NAMES)
-.map(([key,name])=>`
+.map(
+([key,name])=>`
 
 <button
-class="${currentPolicy===key?"active":""}"
+class="${
+currentPolicy===key
+?"active"
+:""
+}"
 onclick="selectPolicyEditor('${key}')">
 
 ${escape(name)}
 
 </button>
 
-`).join("");
+`
+)
+.join("");
 
 loadPolicyEditor();
 
@@ -2904,15 +4138,21 @@ loadPolicyMenu();
 
 function loadPolicyEditor(){
 
-if(!policies[currentPolicy])return;
+if(!policies[currentPolicy])
+return;
 
-document.getElementById("policyTitleInput")
-.value=policies[currentPolicy].title;
+document
+.getElementById("policyTitleInput")
+.value=
+policies[currentPolicy].title;
 
-document.getElementById("policyContentInput")
-.value=policies[currentPolicy].content;
+document
+.getElementById("policyContentInput")
+.value=
+policies[currentPolicy].content;
 
-document.getElementById("policyAdminMessage")
+document
+.getElementById("policyAdminMessage")
 .innerText="";
 
 }
@@ -2923,20 +4163,24 @@ function savePolicy(){
 if(!adminLoggedIn)return;
 
 const title=
-document.getElementById("policyTitleInput")
+document
+.getElementById("policyTitleInput")
 .value.trim();
 
 const content=
-document.getElementById("policyContentInput")
+document
+.getElementById("policyContentInput")
 .value.trim();
 
 if(!title||!content){
 
-document.getElementById("policyAdminMessage")
+document
+.getElementById("policyAdminMessage")
 .innerText=
 "❌ Title और Content दोनों जरूरी हैं।";
 
-document.getElementById("policyAdminMessage")
+document
+.getElementById("policyAdminMessage")
 .style.color="#dc2626";
 
 return;
@@ -2946,8 +4190,12 @@ return;
 policies[currentPolicy]={
 
 title,
+
 content,
-updated:new Date().toLocaleDateString("en-IN")
+
+updated:
+new Date()
+.toLocaleDateString("en-IN")
 
 };
 
@@ -2956,11 +4204,13 @@ localStorage.setItem(
 JSON.stringify(policies)
 );
 
-document.getElementById("policyAdminMessage")
+document
+.getElementById("policyAdminMessage")
 .innerText=
 "✅ Policy successfully updated.";
 
-document.getElementById("policyAdminMessage")
+document
+.getElementById("policyAdminMessage")
 .style.color="#16a34a";
 
 loadPolicyMenu();
@@ -2972,9 +4222,11 @@ function resetCurrentPolicy(){
 
 if(!adminLoggedIn)return;
 
-if(!confirm(
+if(
+!confirm(
 "इस policy को default content पर restore करना है?"
-))
+)
+)
 return;
 
 policies[currentPolicy]={
@@ -2986,7 +4238,8 @@ content:
 DEFAULT_POLICIES[currentPolicy].content,
 
 updated:
-new Date().toLocaleDateString("en-IN")
+new Date()
+.toLocaleDateString("en-IN")
 
 };
 
@@ -2997,11 +4250,13 @@ JSON.stringify(policies)
 
 loadPolicyEditor();
 
-document.getElementById("policyAdminMessage")
+document
+.getElementById("policyAdminMessage")
 .innerText=
 "✅ Default policy restored.";
 
-document.getElementById("policyAdminMessage")
+document
+.getElementById("policyAdminMessage")
 .style.color="#16a34a";
 
 }
@@ -3017,24 +4272,31 @@ if(!policies[key])return;
 
 currentPolicy=key;
 
-document.querySelectorAll(
+document
+.querySelectorAll(
 "#home,#admin,#testPage,#resultPage,#policyPage"
-).forEach(
+)
+.forEach(
 x=>x.classList.add("hidden")
 );
 
-document.getElementById("policyPage")
+document
+.getElementById("policyPage")
 .classList.remove("hidden");
 
-document.getElementById("policyPageTitle")
+document
+.getElementById("policyPageTitle")
 .innerText=
 policies[key].title;
 
-document.getElementById("policyUpdated")
+document
+.getElementById("policyUpdated")
 .innerText=
-policies[key].updated||"Not specified";
+policies[key].updated||
+"Not specified";
 
-document.getElementById("policyPageContent")
+document
+.getElementById("policyPageContent")
 .innerHTML=
 policies[key].content;
 
@@ -3055,17 +4317,24 @@ document.getElementById("policyNav");
 
 nav.innerHTML=
 Object.entries(POLICY_NAMES)
-.map(([key,name])=>`
+.map(
+([key,name])=>`
 
 <button
-class="${currentPolicy===key?"active":""}"
+class="${
+currentPolicy===key
+?"active"
+:""
+}"
 onclick="openPolicy('${key}')">
 
 ${escape(name)}
 
 </button>
 
-`).join("");
+`
+)
+.join("");
 
 }
 
@@ -3088,157 +4357,21 @@ return String(value)
 
 
 /* =====================================================
-   SUPABASE ONLINE DATABASE
+   STARTUP
 ===================================================== */
 
-const SUPABASE_URL=
-"https://xlvrlltnrgvesipyfuib.supabase.co";
-
-const SUPABASE_KEY=
-"sb_publishable_b1ixMzzmCoucBaUKjgK6WA_p3hEUR9L";
-
-
-async function connectSupabase(){
-
-try{
-
-/* LOAD SUPABASE JS */
-
-if(!window.supabase){
-
-await new Promise((resolve,reject)=>{
-
-const script=
-document.createElement("script");
-
-script.src=
-"https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2";
-
-script.onload=resolve;
-script.onerror=reject;
-
-document.head.appendChild(script);
-
-});
-
-}
-
-
-/* CREATE CLIENT */
-
-const db=
-window.supabase.createClient(
-SUPABASE_URL,
-SUPABASE_KEY
-);
-
-window.supabaseClient=db;
-
-
-/* LOAD ONLINE TESTS */
-
-await loadOnlineTests();
-
-console.log(
-"✅ AspirantTest.in Supabase Connected"
-);
-
-}
-catch(error){
-
-console.error(
-"Supabase Connection Error:",
-error
-);
-
-}
-
-}
-
-
-/* =====================================================
-   LOAD ONLINE TESTS
-===================================================== */
-
-async function loadOnlineTests(){
-
-if(!window.supabaseClient)
-return;
-
-const {data,error}=
-await window.supabaseClient
-.from("tests")
-.select("*")
-.order("sequence",{ascending:true});
-
-
-if(error){
-
-console.error(
-"Supabase Load Error:",
-error
-);
-
-return;
-
-}
-
-
-/* CONVERT DATABASE DATA */
-
-tests=
-(data||[]).map(t=>({
-
-id:t.id,
-
-exam:t.exam,
-
-sequence:Number(t.sequence)||1,
-
-title:t.title,
-
-duration:Number(t.duration)||60,
-
-marks:Number(t.marks_per_question)||2,
-
-negative:Number(t.negative_marking)||0.5,
-
-questions:
-Array.isArray(t.questions)
-?t.questions
-:[]
-
-}));
-
-
-/* UPDATE PAGE */
-
-showGroups();
-
-loadExamSelect();
-
-if(adminLoggedIn)
-loadManage();
-
-}
-
-
-/* =====================================================
-   START WEBSITE
-===================================================== */
-
-document.getElementById("footerYear")
+document
+.getElementById("footerYear")
 .innerText=
 new Date().getFullYear();
 
 initializePolicies();
 
-showGroups();
-
 loadExamSelect();
 
+showGroups();
 
-/* CONNECT ONLINE */
+/* CONNECT SUPABASE */
 
 connectSupabase();
 
