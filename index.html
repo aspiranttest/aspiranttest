@@ -237,11 +237,11 @@ margin:10px 0;
 
 /* =====================================================
    FOLDER / GROUP CARDS
-   ONLY 5% WHITE
+   10% WHITE
 ===================================================== */
 
 #groupSection{
-background:rgba(255,255,255,.05);
+background:rgba(255,255,255,.10);
 backdrop-filter:none;
 -webkit-backdrop-filter:none;
 border:1px solid rgba(255,255,255,.20);
@@ -257,8 +257,7 @@ text-shadow:0 1px 2px rgba(255,255,255,.45);
 position:relative;
 overflow:hidden;
 
-/* Folder cards only 5% white */
-background:rgba(255,255,255,.05) !important;
+background:rgba(255,255,255,.10) !important;
 
 backdrop-filter:none !important;
 -webkit-backdrop-filter:none !important;
@@ -268,7 +267,7 @@ box-shadow:0 5px 20px rgba(15,23,42,.08);
 }
 
 .folder-card:hover{
-background:rgba(255,255,255,.08) !important;
+background:rgba(255,255,255,.14) !important;
 }
 
 .folder-card:before{
@@ -826,12 +825,13 @@ background-attachment:scroll;
 min-height:100vh;
 }
 
+/* 10% WHITE */
 #groupSection{
-background:rgba(255,255,255,.05);
+background:rgba(255,255,255,.10);
 }
 
 .folder-card{
-background:rgba(255,255,255,.05) !important;
+background:rgba(255,255,255,.10) !important;
 }
 
 }
@@ -849,12 +849,13 @@ background-repeat:no-repeat;
 background-attachment:scroll;
 }
 
+/* 10% WHITE */
 #groupSection{
-background:rgba(255,255,255,.05);
+background:rgba(255,255,255,.10);
 }
 
 .folder-card{
-background:rgba(255,255,255,.05) !important;
+background:rgba(255,255,255,.10) !important;
 }
 
 }
@@ -872,12 +873,13 @@ background-repeat:no-repeat;
 background-attachment:scroll;
 }
 
+/* 10% WHITE */
 #groupSection{
-background:rgba(255,255,255,.05);
+background:rgba(255,255,255,.10);
 }
 
 .folder-card{
-background:rgba(255,255,255,.05) !important;
+background:rgba(255,255,255,.10) !important;
 }
 
 }
@@ -892,6 +894,7 @@ body{
 background-attachment:scroll;
 background-position:center center;
 background-size:cover;
+background-repeat:no-repeat;
 }
 
 .hero h1{
@@ -930,13 +933,13 @@ gap:3px;
 font-size:25px;
 }
 
-/* 5% white overlay */
+/* 10% WHITE OVERLAY */
 #groupSection{
-background:rgba(255,255,255,.05);
+background:rgba(255,255,255,.10);
 }
 
 .folder-card{
-background:rgba(255,255,255,.05) !important;
+background:rgba(255,255,255,.10) !important;
 }
 
 }
@@ -954,6 +957,14 @@ background-repeat:no-repeat;
 background-attachment:scroll;
 }
 
+#groupSection{
+background:rgba(255,255,255,.10);
+}
+
+.folder-card{
+background:rgba(255,255,255,.10) !important;
+}
+
 }
 
 /* =====================================================
@@ -967,6 +978,14 @@ background-size:cover;
 background-position:center center;
 background-repeat:no-repeat;
 background-attachment:scroll;
+}
+
+#groupSection{
+background:rgba(255,255,255,.10);
+}
+
+.folder-card{
+background:rgba(255,255,255,.10) !important;
 }
 
 }
@@ -1166,7 +1185,7 @@ Website Policies
 
 <button
 class="gray"
-onclick="backupData()">
+onclick="backupData">
 
 Backup
 
@@ -3586,8 +3605,7 @@ catch(error){
 console.error(error);
 
 alert(
-"❌ Error: "+
-error.message
+"❌ Error: "+error.message
 );
 
 }
