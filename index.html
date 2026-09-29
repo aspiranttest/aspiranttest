@@ -49,20 +49,26 @@ scroll-behavior:smooth;
    MAIN BACKGROUND
 ===================================================== */
 
+html,
 body{
 margin:0;
+min-height:100%;
+}
+
+body{
 font-family:Arial,sans-serif;
 color:#172033;
 
-/* IMPORTANT:
-   BACKGROUND.png must be in the same folder
-   as index.html
+/*
+IMPORTANT:
+BACKGROUND.png को इसी folder में रखें
+जिसमें index.html है।
 */
 
 background-image:
 linear-gradient(
-rgba(255,255,255,.38),
-rgba(248,250,252,.45)
+rgba(255,255,255,.18),
+rgba(248,250,252,.22)
 ),
 url("./BACKGROUND.png");
 
@@ -74,7 +80,7 @@ background-attachment:fixed;
 background-color:#eef2f7;
 }
 
-/* Extra soft overlay */
+/* Soft overlay - image को ज्यादा hide नहीं करेगा */
 body:before{
 content:"";
 position:fixed;
@@ -85,12 +91,12 @@ z-index:-1;
 background:
 radial-gradient(
 circle at 10% 20%,
-rgba(37,99,235,.06),
+rgba(37,99,235,.04),
 transparent 25%
 ),
 radial-gradient(
 circle at 90% 80%,
-rgba(124,58,237,.06),
+rgba(124,58,237,.04),
 transparent 25%
 );
 }
@@ -811,6 +817,7 @@ margin:0;
 body{
 background-attachment:scroll;
 background-position:center center;
+background-size:cover;
 }
 
 .hero h1{
@@ -850,6 +857,7 @@ font-size:25px;
 }
 
 }
+
 </style>
 </head>
 
@@ -1045,7 +1053,7 @@ Website Policies
 
 <button
 class="gray"
-onclick="backupData">
+onclick="backupData()">
 
 Backup
 
@@ -3390,8 +3398,7 @@ catch(error){
 console.error(error);
 
 alert(
-"❌ Error: "+
-error.message
+"❌ Error: "+error.message
 );
 
 }
