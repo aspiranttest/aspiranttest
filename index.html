@@ -45,15 +45,16 @@ html{
 scroll-behavior:smooth;
 }
 
-/* =====================================================
-   MAIN BACKGROUND
-===================================================== */
-
 html,
 body{
 margin:0;
 min-height:100%;
 }
+
+/* =====================================================
+   MAIN BACKGROUND
+   Desktop + Mobile Portrait + Mobile Landscape
+===================================================== */
 
 body{
 font-family:Arial,sans-serif;
@@ -206,11 +207,7 @@ border:1px solid rgba(226,232,240,.75);
 
 .grid{
 display:grid;
-grid-template-columns:
-repeat(
-auto-fit,
-minmax(260px,1fr)
-);
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
 gap:18px;
 }
 
@@ -240,11 +237,11 @@ margin:10px 0;
 
 /* =====================================================
    FOLDER / GROUP CARDS
-   BACKGROUND VISIBLE - 10% WHITE
+   ONLY 5% WHITE
 ===================================================== */
 
 #groupSection{
-background:rgba(255,255,255,.10);
+background:rgba(255,255,255,.05);
 backdrop-filter:none;
 -webkit-backdrop-filter:none;
 border:1px solid rgba(255,255,255,.20);
@@ -260,8 +257,8 @@ text-shadow:0 1px 2px rgba(255,255,255,.45);
 position:relative;
 overflow:hidden;
 
-/* Folder cards only 10% white */
-background:rgba(255,255,255,.10) !important;
+/* Folder cards only 5% white */
+background:rgba(255,255,255,.05) !important;
 
 backdrop-filter:none !important;
 -webkit-backdrop-filter:none !important;
@@ -271,7 +268,7 @@ box-shadow:0 5px 20px rgba(15,23,42,.08);
 }
 
 .folder-card:hover{
-background:rgba(255,255,255,.16) !important;
+background:rgba(255,255,255,.08) !important;
 }
 
 .folder-card:before{
@@ -328,11 +325,7 @@ color:#475569;
 
 .form-grid{
 display:grid;
-grid-template-columns:
-repeat(
-auto-fit,
-minmax(220px,1fr)
-);
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
 gap:15px;
 }
 
@@ -501,11 +494,7 @@ margin-right:8px;
 
 .palette{
 display:grid;
-grid-template-columns:
-repeat(
-auto-fill,
-minmax(42px,1fr)
-);
+grid-template-columns:repeat(auto-fill,minmax(42px,1fr));
 gap:7px;
 margin:15px 0;
 }
@@ -529,11 +518,7 @@ outline:3px solid #f59e0b;
 
 .result-grid{
 display:grid;
-grid-template-columns:
-repeat(
-auto-fit,
-minmax(130px,1fr)
-);
+grid-template-columns:repeat(auto-fit,minmax(130px,1fr));
 gap:14px;
 }
 
@@ -818,6 +803,89 @@ margin:0;
 
 }
 
+/* =====================================================
+   MOBILE PORTRAIT + LANDSCAPE
+   BACKGROUND IMAGE PROPERLY VISIBLE
+===================================================== */
+
+@media(max-width:900px){
+
+body{
+background-image:
+linear-gradient(
+rgba(255,255,255,.07),
+rgba(248,250,252,.10)
+),
+url("./BACKGROUND.png");
+
+background-size:cover;
+background-position:center center;
+background-repeat:no-repeat;
+background-attachment:scroll;
+
+min-height:100vh;
+}
+
+#groupSection{
+background:rgba(255,255,255,.05);
+}
+
+.folder-card{
+background:rgba(255,255,255,.05) !important;
+}
+
+}
+
+/* =====================================================
+   MOBILE PORTRAIT
+===================================================== */
+
+@media(max-width:900px) and (orientation:portrait){
+
+body{
+background-size:cover;
+background-position:center center;
+background-repeat:no-repeat;
+background-attachment:scroll;
+}
+
+#groupSection{
+background:rgba(255,255,255,.05);
+}
+
+.folder-card{
+background:rgba(255,255,255,.05) !important;
+}
+
+}
+
+/* =====================================================
+   MOBILE LANDSCAPE
+===================================================== */
+
+@media(max-width:900px) and (orientation:landscape){
+
+body{
+background-size:cover;
+background-position:center center;
+background-repeat:no-repeat;
+background-attachment:scroll;
+}
+
+#groupSection{
+background:rgba(255,255,255,.05);
+}
+
+.folder-card{
+background:rgba(255,255,255,.05) !important;
+}
+
+}
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
 @media(max-width:600px){
 
 body{
@@ -862,13 +930,43 @@ gap:3px;
 font-size:25px;
 }
 
-/* Mobile पर भी Folder Section 10% */
+/* 5% white overlay */
 #groupSection{
-background:rgba(255,255,255,.10);
+background:rgba(255,255,255,.05);
 }
 
 .folder-card{
-background:rgba(255,255,255,.10) !important;
+background:rgba(255,255,255,.05) !important;
+}
+
+}
+
+/* =====================================================
+   SMALL MOBILE PORTRAIT
+===================================================== */
+
+@media(max-width:600px) and (orientation:portrait){
+
+body{
+background-size:cover;
+background-position:center center;
+background-repeat:no-repeat;
+background-attachment:scroll;
+}
+
+}
+
+/* =====================================================
+   SMALL MOBILE LANDSCAPE
+===================================================== */
+
+@media(max-width:600px) and (orientation:landscape){
+
+body{
+background-size:cover;
+background-position:center center;
+background-repeat:no-repeat;
+background-attachment:scroll;
 }
 
 }
@@ -1068,7 +1166,7 @@ Website Policies
 
 <button
 class="gray"
-onclick="backupData">
+onclick="backupData()">
 
 Backup
 
