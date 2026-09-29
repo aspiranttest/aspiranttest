@@ -33,22 +33,34 @@
 }
 </script>
 
-<!-- SUPABASE JS -->
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
 <style>
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
+
+html{
+scroll-behavior:smooth;
+}
+
+/* =====================================================
+   BACKGROUND
+===================================================== */
 
 body{
 margin:0;
 font-family:Arial,sans-serif;
 color:#172033;
+
 background:
-linear-gradient(rgba(239,246,255,.94),rgba(248,250,252,.96)),
-url("https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=2000&q=80");
+linear-gradient(
+rgba(255,255,255,.25),
+rgba(248,250,252,.30)
+),
+url("BACKGROUND.png");
+
 background-size:cover;
-background-position:center;
+background-position:center center;
+background-repeat:no-repeat;
 background-attachment:fixed;
 }
 
@@ -58,10 +70,23 @@ position:fixed;
 inset:0;
 pointer-events:none;
 z-index:-1;
+
 background:
-radial-gradient(circle at 10% 20%,rgba(37,99,235,.10),transparent 25%),
-radial-gradient(circle at 90% 80%,rgba(124,58,237,.10),transparent 25%);
+radial-gradient(
+circle at 10% 20%,
+rgba(37,99,235,.06),
+transparent 25%
+),
+radial-gradient(
+circle at 90% 80%,
+rgba(124,58,237,.06),
+transparent 25%
+);
 }
+
+/* =====================================================
+   HEADER
+===================================================== */
 
 header{
 background:rgba(17,24,39,.97);
@@ -78,7 +103,10 @@ top:0;
 z-index:100;
 }
 
-.logo{font-size:22px;font-weight:800}
+.logo{
+font-size:22px;
+font-weight:800;
+}
 
 nav{
 display:flex;
@@ -120,10 +148,21 @@ max-width:1250px;
 margin:25px auto;
 }
 
-.hidden{display:none!important}
+.hidden{
+display:none!important;
+}
+
+/* =====================================================
+   HERO
+===================================================== */
 
 .hero{
-background:linear-gradient(135deg,rgba(29,78,216,.96),rgba(124,58,237,.94));
+background:
+linear-gradient(
+135deg,
+rgba(29,78,216,.96),
+rgba(124,58,237,.94)
+);
 color:#fff;
 border-radius:18px;
 padding:45px 25px;
@@ -137,7 +176,13 @@ font-size:38px;
 margin:0 0 12px;
 }
 
-.hero p{font-size:17px}
+.hero p{
+font-size:17px;
+}
+
+/* =====================================================
+   CARD
+===================================================== */
 
 .card{
 background:rgba(255,255,255,.96);
@@ -151,9 +196,16 @@ border:1px solid rgba(226,232,240,.8);
 
 .grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+grid-template-columns:repeat(
+auto-fit,
+minmax(260px,1fr)
+);
 gap:18px;
 }
+
+/* =====================================================
+   EXAM CARD
+===================================================== */
 
 .exam-card{
 background:rgba(255,255,255,.97);
@@ -169,7 +221,9 @@ transform:translateY(-4px);
 box-shadow:0 10px 25px rgba(15,23,42,.15);
 }
 
-.exam-card h3{margin:10px 0}
+.exam-card h3{
+margin:10px 0;
+}
 
 .folder-card{
 position:relative;
@@ -186,7 +240,9 @@ height:7px;
 background:#f59e0b;
 }
 
-.folder-card h3{font-size:22px}
+.folder-card h3{
+font-size:22px;
+}
 
 .folder-card p{
 color:#64748b;
@@ -210,6 +266,10 @@ background:#dcfce7;
 color:#15803d;
 }
 
+/* =====================================================
+   INFO
+===================================================== */
+
 .info{
 display:flex;
 flex-direction:column;
@@ -218,13 +278,23 @@ margin:15px 0;
 color:#475569;
 }
 
+/* =====================================================
+   FORMS
+===================================================== */
+
 .form-grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+grid-template-columns:
+repeat(
+auto-fit,
+minmax(220px,1fr)
+);
 gap:15px;
 }
 
-.form-group{margin-bottom:15px}
+.form-group{
+margin-bottom:15px;
+}
 
 label{
 font-weight:bold;
@@ -232,7 +302,9 @@ display:block;
 margin-bottom:6px;
 }
 
-input,select,textarea{
+input,
+select,
+textarea{
 width:100%;
 padding:11px;
 border:1px solid #cbd5e1;
@@ -241,7 +313,9 @@ font-size:15px;
 background:#fff;
 }
 
-input:focus,select:focus,textarea:focus{
+input:focus,
+select:focus,
+textarea:focus{
 outline:2px solid #93c5fd;
 border-color:#2563eb;
 }
@@ -258,7 +332,13 @@ flex-wrap:wrap;
 margin-top:12px;
 }
 
-.table-wrap{overflow:auto}
+/* =====================================================
+   TABLE
+===================================================== */
+
+.table-wrap{
+overflow:auto;
+}
 
 table{
 width:100%;
@@ -266,13 +346,20 @@ border-collapse:collapse;
 background:#fff;
 }
 
-th,td{
+th,
+td{
 padding:10px;
 border:1px solid #cbd5e1;
 text-align:left;
 }
 
-th{background:#e2e8f0}
+th{
+background:#e2e8f0;
+}
+
+/* =====================================================
+   TEST HEADER
+===================================================== */
 
 .test-header{
 background:rgba(17,24,39,.98);
@@ -310,6 +397,10 @@ height:100%;
 background:#2563eb;
 width:0;
 }
+
+/* =====================================================
+   QUESTION
+===================================================== */
 
 .question-card{
 background:rgba(255,255,255,.98);
@@ -358,9 +449,17 @@ width:auto;
 margin-right:8px;
 }
 
+/* =====================================================
+   PALETTE
+===================================================== */
+
 .palette{
 display:grid;
-grid-template-columns:repeat(auto-fill,minmax(42px,1fr));
+grid-template-columns:
+repeat(
+auto-fill,
+minmax(42px,1fr)
+);
 gap:7px;
 margin:15px 0;
 }
@@ -370,12 +469,25 @@ padding:9px 5px;
 background:#94a3b8;
 }
 
-.palette button.answered{background:#16a34a}
-.palette button.current{outline:3px solid #f59e0b}
+.palette button.answered{
+background:#16a34a;
+}
+
+.palette button.current{
+outline:3px solid #f59e0b;
+}
+
+/* =====================================================
+   RESULT
+===================================================== */
 
 .result-grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(130px,1fr));
+grid-template-columns:
+repeat(
+auto-fit,
+minmax(130px,1fr)
+);
 gap:14px;
 }
 
@@ -400,9 +512,21 @@ margin:12px 0;
 border-left:5px solid #64748b;
 }
 
-.review.correct{border-left-color:#16a34a}
-.review.wrong{border-left-color:#dc2626}
-.review.skip{border-left-color:#d97706}
+.review.correct{
+border-left-color:#16a34a;
+}
+
+.review.wrong{
+border-left-color:#dc2626;
+}
+
+.review.skip{
+border-left-color:#d97706;
+}
+
+/* =====================================================
+   FOOTER
+===================================================== */
 
 footer{
 text-align:center;
@@ -436,12 +560,18 @@ padding:7px 9px;
 font-weight:600;
 }
 
-.footer-links button:hover{background:#eff6ff}
+.footer-links button:hover{
+background:#eff6ff;
+}
 
 .footer-copy{
 font-size:13px;
 margin-top:15px;
 }
+
+/* =====================================================
+   POLICY
+===================================================== */
 
 .policy-card{
 max-width:1000px;
@@ -459,14 +589,19 @@ margin-top:28px;
 color:#1e3a8a;
 }
 
-.policy-card h3{color:#334155}
+.policy-card h3{
+color:#334155;
+}
 
-.policy-card p,.policy-card li{
+.policy-card p,
+.policy-card li{
 line-height:1.75;
 color:#475569;
 }
 
-.policy-card ul{padding-left:25px}
+.policy-card ul{
+padding-left:25px;
+}
 
 .policy-date{
 font-size:13px;
@@ -491,6 +626,10 @@ background:#2563eb;
 color:#fff;
 }
 
+/* =====================================================
+   LOGIN
+===================================================== */
+
 .login-card{
 max-width:450px;
 margin:50px auto;
@@ -514,6 +653,10 @@ margin-top:12px;
 min-height:20px;
 }
 
+/* =====================================================
+   ADMIN
+===================================================== */
+
 .admin-top{
 display:flex;
 justify-content:space-between;
@@ -531,7 +674,8 @@ flex-wrap:wrap;
 margin-top:18px;
 }
 
-.test-navigation,.test-exit{
+.test-navigation,
+.test-exit{
 display:flex;
 gap:8px;
 flex-wrap:wrap;
@@ -571,6 +715,10 @@ font-family:Arial,sans-serif;
 line-height:1.6;
 }
 
+/* =====================================================
+   NOTICE
+===================================================== */
+
 .notice{
 padding:13px 15px;
 border-radius:8px;
@@ -600,6 +748,10 @@ font-size:12px;
 font-weight:bold;
 }
 
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
 @media(max-width:700px){
 
 .policy-admin-grid{
@@ -612,15 +764,26 @@ grid-template-columns:repeat(2,1fr);
 gap:6px;
 }
 
-.policy-menu button{margin:0}
+.policy-menu button{
+margin:0;
+}
 
 }
 
 @media(max-width:600px){
 
-.hero h1{font-size:28px}
+body{
+background-attachment:scroll;
+background-position:center center;
+}
 
-.question{font-size:17px}
+.hero h1{
+font-size:28px;
+}
+
+.question{
+font-size:17px;
+}
 
 .test-header{
 position:static;
@@ -631,18 +794,24 @@ flex-direction:column;
 align-items:stretch;
 }
 
-.test-navigation,.test-exit{
+.test-navigation,
+.test-exit{
 width:100%;
 justify-content:stretch;
 }
 
-.test-navigation button,.test-exit button{
+.test-navigation button,
+.test-exit button{
 flex:1;
 }
 
-.footer-links{gap:3px}
+.footer-links{
+gap:3px;
+}
 
-.policy-card h1{font-size:25px}
+.policy-card h1{
+font-size:25px;
+}
 
 }
 </style>
@@ -652,24 +821,37 @@ flex:1;
 
 <header>
 
-<div class="logo">📚 AspirantTest.in</div>
+<div class="logo">
+📚 AspirantTest.in
+</div>
 
 <nav>
-<button onclick="page('home')">Home</button>
-<button onclick="page('admin')">Admin</button>
+
+<button onclick="page('home')">
+Home
+</button>
+
+<button onclick="page('admin')">
+Admin
+</button>
+
 </nav>
 
 </header>
 
 <div class="container">
 
-<!-- HOME -->
+<!-- =====================================================
+     HOME
+===================================================== -->
 
 <section id="home">
 
 <div class="hero">
 
-<h1>All Competitive Exams</h1>
+<h1>
+All Competitive Exams
+</h1>
 
 <p>
 SSC • Banking • Railway • Police • State Exams • Teaching • Defence • Other
@@ -677,15 +859,15 @@ SSC • Banking • Railway • Police • State Exams • Teaching • Defence 
 
 </div>
 
-
 <div class="card" id="groupSection">
 
-<h2>📁 Select Exam Folder</h2>
+<h2>
+📁 Select Exam Folder
+</h2>
 
 <div id="groupList" class="grid"></div>
 
 </div>
-
 
 <div class="card hidden" id="examSection">
 
@@ -705,7 +887,6 @@ Select Exam
 
 </div>
 
-
 <div id="testArea" class="card hidden">
 
 <h2 id="testAreaTitle"></h2>
@@ -716,22 +897,31 @@ Select Exam
 
 </section>
 
-
-<!-- ADMIN -->
+<!-- =====================================================
+     ADMIN
+===================================================== -->
 
 <section id="admin" class="hidden">
 
 <div id="adminLogin" class="card login-card">
 
-<div class="login-icon">🔐</div>
+<div class="login-icon">
+🔐
+</div>
 
-<h2>Admin Login</h2>
+<h2>
+Admin Login
+</h2>
 
-<p>Admin Dashboard access करने के लिए login करें।</p>
+<p>
+Admin Dashboard access करने के लिए login करें।
+</p>
 
 <div class="form-group">
 
-<label>Username</label>
+<label>
+Username
+</label>
 
 <input
 id="adminUsername"
@@ -742,7 +932,9 @@ placeholder="Enter Admin Username">
 
 <div class="form-group">
 
-<label>Password</label>
+<label>
+Password
+</label>
 
 <input
 id="adminPassword"
@@ -765,7 +957,6 @@ LOGIN
 
 </div>
 
-
 <div id="adminDashboard" class="hidden">
 
 <div class="card">
@@ -774,7 +965,9 @@ LOGIN
 
 <div>
 
-<h2>Admin Dashboard</h2>
+<h2>
+Admin Dashboard
+</h2>
 
 <p>
 Exam, Test और Website Policies manage करें।
@@ -786,8 +979,12 @@ Connecting...
 
 </div>
 
-<button class="red" onclick="adminLogout()">
+<button
+class="red"
+onclick="adminLogout()">
+
 Logout
+
 </button>
 
 </div>
@@ -830,12 +1027,13 @@ Reset Data
 
 </div>
 
-
 <!-- ADD TEST -->
 
 <div id="adminAdd" class="card">
 
-<h2>Add / Update Test</h2>
+<h2>
+Add / Update Test
+</h2>
 
 <div class="notice">
 
@@ -848,7 +1046,9 @@ Test save करते ही यह Supabase database में online save ह
 
 <div class="form-group">
 
-<label>Exam</label>
+<label>
+Exam
+</label>
 
 <select id="examSelect">
 
@@ -860,10 +1060,11 @@ Select Exam
 
 </div>
 
-
 <div class="form-group">
 
-<label>Test Sequence</label>
+<label>
+Test Sequence
+</label>
 
 <input
 id="sequenceInput"
@@ -873,10 +1074,11 @@ value="1">
 
 </div>
 
-
 <div class="form-group">
 
-<label>Test Name</label>
+<label>
+Test Name
+</label>
 
 <input
 id="titleInput"
@@ -884,10 +1086,11 @@ placeholder="Mock Test 1">
 
 </div>
 
-
 <div class="form-group">
 
-<label>Duration Minutes</label>
+<label>
+Duration Minutes
+</label>
 
 <input
 id="durationInput"
@@ -896,10 +1099,11 @@ value="60">
 
 </div>
 
-
 <div class="form-group">
 
-<label>Marks Per Question</label>
+<label>
+Marks Per Question
+</label>
 
 <input
 id="marksInput"
@@ -908,10 +1112,11 @@ value="2">
 
 </div>
 
-
 <div class="form-group">
 
-<label>Negative Marks</label>
+<label>
+Negative Marks
+</label>
 
 <input
 id="negativeInput"
@@ -923,10 +1128,11 @@ value="0.5">
 
 </div>
 
-
 <div class="form-group">
 
-<label>Questions JSON</label>
+<label>
+Questions JSON
+</label>
 
 <textarea
 id="questionsInput"
@@ -943,7 +1149,6 @@ placeholder='[
 ]'></textarea>
 
 </div>
-
 
 <div class="actions">
 
@@ -970,23 +1175,25 @@ Clear
 
 </div>
 
-
 <!-- MANAGE -->
 
 <div id="adminManage" class="card hidden">
 
-<h2>Manage Tests</h2>
+<h2>
+Manage Tests
+</h2>
 
 <div id="manageList"></div>
 
 </div>
 
-
 <!-- POLICIES -->
 
 <div id="adminPolicies" class="card hidden">
 
-<h2>Website Policies & Information</h2>
+<h2>
+Website Policies & Information
+</h2>
 
 <div class="notice">
 
@@ -996,13 +1203,18 @@ Clear
 
 <div class="policy-admin-grid">
 
-<div class="policy-menu" id="policyMenu"></div>
+<div
+class="policy-menu"
+id="policyMenu">
+</div>
 
 <div class="policy-editor">
 
 <div class="form-group">
 
-<label>Page Title</label>
+<label>
+Page Title
+</label>
 
 <input id="policyTitleInput">
 
@@ -1010,7 +1222,9 @@ Clear
 
 <div class="form-group">
 
-<label>Page Content</label>
+<label>
+Page Content
+</label>
 
 <textarea id="policyContentInput"></textarea>
 
@@ -1048,8 +1262,9 @@ Restore Default
 
 </section>
 
-
-<!-- TEST PAGE -->
+<!-- =====================================================
+     TEST PAGE
+===================================================== -->
 
 <section id="testPage" class="hidden">
 
@@ -1071,7 +1286,6 @@ Restore Default
 
 </div>
 
-
 <div class="progress">
 
 <div
@@ -1081,11 +1295,9 @@ class="progress-bar">
 
 </div>
 
-
 <div id="palette" class="palette"></div>
 
 <div id="questionArea"></div>
-
 
 <div class="test-controls">
 
@@ -1108,7 +1320,6 @@ onclick="exitTest()">
 </button>
 
 </div>
-
 
 <div class="test-navigation">
 
@@ -1143,14 +1354,17 @@ Submit Test
 
 </section>
 
-
-<!-- RESULT -->
+<!-- =====================================================
+     RESULT
+===================================================== -->
 
 <section id="resultPage" class="hidden">
 
 <div class="card">
 
-<h2>📊 Test Result</h2>
+<h2>
+📊 Test Result
+</h2>
 
 <div id="resultSummary"></div>
 
@@ -1158,7 +1372,9 @@ Submit Test
 
 <div class="card">
 
-<h2>📚 Solutions</h2>
+<h2>
+📚 Solutions
+</h2>
 
 <div id="solutions"></div>
 
@@ -1166,12 +1382,16 @@ Submit Test
 
 </section>
 
-
-<!-- POLICY PAGE -->
+<!-- =====================================================
+     POLICY PAGE
+===================================================== -->
 
 <section id="policyPage" class="hidden">
 
-<div class="policy-nav" id="policyNav"></div>
+<div
+class="policy-nav"
+id="policyNav">
+</div>
 
 <div class="card policy-card">
 
@@ -1198,6 +1418,9 @@ Last Updated:
 
 </div>
 
+<!-- =====================================================
+     FOOTER
+===================================================== -->
 
 <footer>
 
@@ -1258,7 +1481,6 @@ AspirantTest.in. All Rights Reserved.
 </div>
 
 </footer>
-
 
 <script>
 
@@ -1810,7 +2032,8 @@ try{
 const {
 data,
 error
-}=await supabaseClient
+}=
+await supabaseClient
 .from("tests")
 .select("*")
 .order("exam",{ascending:true})
@@ -1828,7 +2051,6 @@ setDatabaseStatus(false);
 return false;
 
 }
-
 
 tests=
 (data||[]).map(t=>({
@@ -1854,12 +2076,10 @@ Array.isArray(t.questions)
 
 }));
 
-
 console.log(
 "✅ Online tests loaded:",
 tests.length
 );
-
 
 setDatabaseStatus(true);
 
@@ -2474,7 +2694,7 @@ message:""
 
 
 /* =====================================================
-   SAVE TEST - SUPABASE
+   SAVE TEST
 ===================================================== */
 
 async function saveTest(){
@@ -2499,7 +2719,6 @@ message(
 return;
 
 }
-
 
 const exam=
 document
@@ -2544,7 +2763,6 @@ document
 .getElementById("questionsInput")
 .value.trim();
 
-
 if(
 !exam ||
 !sequence ||
@@ -2562,7 +2780,6 @@ return;
 
 }
 
-
 if(!Number.isFinite(sequence)||sequence<1){
 
 message(
@@ -2573,7 +2790,6 @@ message(
 return;
 
 }
-
 
 if(!Number.isFinite(duration)||duration<1){
 
@@ -2586,7 +2802,6 @@ return;
 
 }
 
-
 if(!Number.isFinite(marks)||marks<=0){
 
 message(
@@ -2598,7 +2813,6 @@ return;
 
 }
 
-
 if(!Number.isFinite(negative)||negative<0){
 
 message(
@@ -2609,7 +2823,6 @@ message(
 return;
 
 }
-
 
 let questions;
 
@@ -2632,7 +2845,6 @@ return;
 
 }
 
-
 const validation=
 validateQuestions(questions);
 
@@ -2646,9 +2858,6 @@ validation.message,
 return;
 
 }
-
-
-/* SAVE BUTTON */
 
 const saveButton=
 document.getElementById(
@@ -2664,10 +2873,7 @@ saveButton.innerText=
 
 }
 
-
 try{
-
-/* CHECK SAME EXAM + SEQUENCE */
 
 const {
 data:existingRows,
@@ -2679,7 +2885,6 @@ await supabaseClient
 .eq("exam",exam)
 .eq("sequence",sequence)
 .limit(1);
-
 
 if(findError){
 
@@ -2698,13 +2903,11 @@ return;
 
 }
 
-
 const existing=
 existingRows &&
 existingRows.length
 ?existingRows[0]
 :null;
-
 
 /* UPDATE */
 
@@ -2717,7 +2920,6 @@ confirm(
 
 if(!ok)
 return;
-
 
 const {
 error:updateError
@@ -2738,7 +2940,6 @@ questions:questions
 
 })
 .eq("id",existing.id);
-
 
 if(updateError){
 
@@ -2763,7 +2964,6 @@ message(
 );
 
 }
-
 
 /* INSERT */
 
@@ -2792,7 +2992,6 @@ questions:questions
 
 });
 
-
 if(insertError){
 
 console.error(
@@ -2816,9 +3015,6 @@ message(
 );
 
 }
-
-
-/* REFRESH DATA */
 
 await loadOnlineTests();
 
@@ -2923,7 +3119,6 @@ return;
 
 }
 
-
 const sorted=
 [...tests].sort((a,b)=>{
 
@@ -2948,7 +3143,6 @@ Number(b.sequence)||999999
 );
 
 });
-
 
 box.innerHTML=`
 
@@ -3121,7 +3315,6 @@ return;
 
 }
 
-
 try{
 
 const {
@@ -3131,7 +3324,6 @@ await supabaseClient
 .from("tests")
 .delete()
 .eq("id",id);
-
 
 if(error){
 
@@ -3148,7 +3340,6 @@ error.message
 return;
 
 }
-
 
 await loadOnlineTests();
 
@@ -3200,7 +3391,6 @@ return;
 
 }
 
-
 try{
 
 const {
@@ -3210,7 +3400,6 @@ await supabaseClient
 .from("tests")
 .delete()
 .gte("id",0);
-
 
 if(error){
 
@@ -3227,7 +3416,6 @@ error.message
 return;
 
 }
-
 
 tests=[];
 
@@ -3671,7 +3859,6 @@ let score=0;
 
 const subject={};
 
-
 currentTest.questions.forEach(
 (q,index)=>{
 
@@ -3728,7 +3915,6 @@ subject[subjectName].wrong++;
 
 });
 
-
 const total=
 currentTest.questions.length;
 
@@ -3751,7 +3937,6 @@ const accuracy=
 attempted
 ?(correct/attempted)*100
 :0;
-
 
 showResult({
 
@@ -3870,7 +4055,6 @@ Attempted
 
 </div>
 
-
 <h3>
 Subject Performance
 </h3>
@@ -3919,7 +4103,6 @@ Back To Tests
 </button>
 
 `;
-
 
 document
 .getElementById("solutions")
