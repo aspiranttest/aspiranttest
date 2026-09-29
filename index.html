@@ -36,14 +36,17 @@
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
 <style>
-*{box-sizing:border-box}
+
+*{
+box-sizing:border-box;
+}
 
 html{
 scroll-behavior:smooth;
 }
 
 /* =====================================================
-   BACKGROUND
+   MAIN BACKGROUND
 ===================================================== */
 
 body{
@@ -51,19 +54,27 @@ margin:0;
 font-family:Arial,sans-serif;
 color:#172033;
 
-background:
+/* IMPORTANT:
+   BACKGROUND.png must be in the same folder
+   as index.html
+*/
+
+background-image:
 linear-gradient(
-rgba(255,255,255,.25),
-rgba(248,250,252,.30)
+rgba(255,255,255,.38),
+rgba(248,250,252,.45)
 ),
-url("BACKGROUND.png");
+url("./BACKGROUND.png");
 
 background-size:cover;
 background-position:center center;
 background-repeat:no-repeat;
 background-attachment:fixed;
+
+background-color:#eef2f7;
 }
 
+/* Extra soft overlay */
 body:before{
 content:"";
 position:fixed;
@@ -129,12 +140,29 @@ opacity:.9;
 transform:translateY(-1px);
 }
 
-button.red{background:#dc2626}
-button.green{background:#16a34a}
-button.gray{background:#64748b}
-button.orange{background:#d97706}
-button.purple{background:#7c3aed}
-button.dark{background:#111827}
+button.red{
+background:#dc2626;
+}
+
+button.green{
+background:#16a34a;
+}
+
+button.gray{
+background:#64748b;
+}
+
+button.orange{
+background:#d97706;
+}
+
+button.purple{
+background:#7c3aed;
+}
+
+button.dark{
+background:#111827;
+}
 
 button:disabled{
 background:#94a3b8;
@@ -185,8 +213,9 @@ font-size:17px;
 ===================================================== */
 
 .card{
-background:rgba(255,255,255,.96);
+background:rgba(255,255,255,.94);
 backdrop-filter:blur(5px);
+-webkit-backdrop-filter:blur(5px);
 border-radius:14px;
 padding:22px;
 box-shadow:0 5px 22px rgba(15,23,42,.10);
@@ -196,7 +225,8 @@ border:1px solid rgba(226,232,240,.8);
 
 .grid{
 display:grid;
-grid-template-columns:repeat(
+grid-template-columns:
+repeat(
 auto-fit,
 minmax(260px,1fr)
 );
@@ -208,7 +238,9 @@ gap:18px;
 ===================================================== */
 
 .exam-card{
-background:rgba(255,255,255,.97);
+background:rgba(255,255,255,.95);
+backdrop-filter:blur(4px);
+-webkit-backdrop-filter:blur(4px);
 border-radius:14px;
 padding:22px;
 box-shadow:0 5px 20px rgba(15,23,42,.10);
@@ -403,7 +435,9 @@ width:0;
 ===================================================== */
 
 .question-card{
-background:rgba(255,255,255,.98);
+background:rgba(255,255,255,.96);
+backdrop-filter:blur(4px);
+-webkit-backdrop-filter:blur(4px);
 border-radius:14px;
 padding:25px;
 box-shadow:0 5px 22px rgba(15,23,42,.10);
@@ -532,7 +566,9 @@ footer{
 text-align:center;
 padding:35px 20px;
 color:#64748b;
-background:rgba(255,255,255,.97);
+background:rgba(255,255,255,.95);
+backdrop-filter:blur(5px);
+-webkit-backdrop-filter:blur(5px);
 margin-top:30px;
 box-shadow:0 -5px 20px rgba(0,0,0,.06);
 }
@@ -1009,7 +1045,7 @@ Website Policies
 
 <button
 class="gray"
-onclick="backupData()">
+onclick="backupData">
 
 Backup
 
@@ -1891,6 +1927,7 @@ let policies=
 JSON.parse(
 localStorage.getItem("websitePolicies")
 )||{};
+
 
 function initializePolicies(){
 
@@ -2909,8 +2946,6 @@ existingRows.length
 ?existingRows[0]
 :null;
 
-/* UPDATE */
-
 if(existing){
 
 const ok=
@@ -2964,8 +2999,6 @@ message(
 );
 
 }
-
-/* INSERT */
 
 else{
 
@@ -4553,8 +4586,6 @@ initializePolicies();
 loadExamSelect();
 
 showGroups();
-
-/* CONNECT SUPABASE */
 
 connectSupabase();
 
